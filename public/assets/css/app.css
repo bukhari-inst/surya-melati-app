@@ -1,0 +1,15 @@
+.image--cover {
+  max-width: 43px;
+  max-height: 43px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center right;
+}
+
+.nav-item .img {
+  max-width: 43px;
+  max-height: 43px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center right;
+}
