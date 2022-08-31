@@ -118,7 +118,8 @@
                                         Clita erat ipsum et lorem et sit, sed stet lorem sit clita
                                         duo justo magna dolore erat amet
                                     </p>
-                                    <a href="" class="btn btn-primary py-3 px-5">More Details</a>
+                                    <a href="<?= base_url('/login'); ?>" class=" btn btn-primary py-3 px-5">Masuk <i
+                                            class="fas fa-sign-in-alt"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -137,7 +138,8 @@
                                         Clita erat ipsum et lorem et sit, sed stet lorem sit clita
                                         duo justo magna dolore erat amet
                                     </p>
-                                    <a href="" class="btn btn-primary py-3 px-5">More Details</a>
+                                    <a href="<?= base_url('/login'); ?>" class=" btn btn-primary py-3 px-5">Masuk <i
+                                            class="fas fa-sign-in-alt"></i></a>
                                 </div>
                             </div>
                         </div>
