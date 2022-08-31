@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class ModelPasien extends Model
 {
-    protected $table = 'pasien_bayi';
+    protected $table = 'pasien';
     protected $primaryKey = 'no_rkm_medis';
 
     // protected $useTimestamps = false;
@@ -14,6 +14,13 @@ class ModelPasien extends Model
     protected $returnType = 'object';
 
     protected $allowedFields = [
-        'no_rkm_medis', 'umur_ibu'
+        'no_rkm_medis', 'tgl_lahir'
     ];
+
+    public function getPasienWhereNoRkmMedis($noRkmMedis)
+    {
+        return $this->select('no_rkm_medis, tgl_lahir')
+            ->where('no_rkm_medis', $noRkmMedis)
+            ->first();
+    }
 }
