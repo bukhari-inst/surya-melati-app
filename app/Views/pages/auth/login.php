@@ -8,28 +8,27 @@
     </div>
 
     <div class="text-center mt-4 name">Selamat datang kembali.</div>
-    <form class="p-3 mt-3" action="<?= route_to('login') ?>" method="post">
+    <?php if (session()->getFlashdata('error')) : ?>
+    <div class="alert alert-danger text-center" role="alert">
+        <?= session()->getFlashdata('error') ?>
+    </div>
+    <?php endif; ?>
+    <form class="p-3 mt-3" action="<?= base_url('/loginProcess') ?>" method="post">
         <?= csrf_field() ?>
         <div class="form-floating mb-3 d-flex align-items-center">
-            <input type="email" class="form-control" name="email" id="floatingInput" placeholder="Nomor Rekam Medik">
-            <label for="floatingInput"> Email address</label>
+            <input type="number" class="form-control" name="noRkmMedis" id="floatingInput"
+                placeholder="Nomor Rekam Medik" required>
+            <label for="floatingInput">Nomor rekam medik</label>
         </div>
         <div class="form-floating">
-            <input type="password" class="form-control" name="password" id="floatingPassword" placeholder="Password">
-            <label for="floatingPassword">Password</label>
+            <input type="date" class="form-control" name="date" id="floatingPassword" placeholder="Tanggal lahir"
+                required>
+            <label for="floatingPassword">Tanggal lahir</label>
         </div>
-        <!-- <div class="form-field d-flex align-items-center">
-            <span class="far fa-user"></span>
-            <input type="text" name="userName" id="userName" placeholder="Nomor Rekam Medik" />
-        </div>
-        <div class="form-field d-flex align-items-center">
-            <span class="fas fa-key"></span>
-            <input type="password" name="password" id="pwd" placeholder="NIK" />
-        </div> -->
         <button class="btn mt-4">Login</button>
     </form>
     <div class="text-center fs-6">
-        <a href="#">Daftar Pasien Baru</a>
+        <!-- <a href="#">Daftar Pasien Baru</a> -->
     </div>
 </div>
 
