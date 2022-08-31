@@ -10,6 +10,8 @@ class Users extends BaseController
 
     public function login()
     {
-        dd("sukses");
+        $data = [];
+
+        return view('pages/auth/login');
     }
 }
