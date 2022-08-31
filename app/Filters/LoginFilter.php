@@ -10,9 +10,7 @@ class LoginFilter implements FilterInterface
 {
     public function before(RequestInterface $request, $arguments = null)
     {
-        $auth = service('auth');
-
-        if (!$auth->isLoggedIn()) {
+        if (!session('id_user')) {
             return redirect()->to(site_url('login'));
         }
     }
