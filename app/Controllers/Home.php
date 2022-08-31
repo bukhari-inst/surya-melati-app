@@ -18,6 +18,6 @@ class Home extends BaseController
 
         $data = [];
 
-        return view('index');
+        return view('pages/index');
     }
 }
