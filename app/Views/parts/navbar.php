@@ -11,10 +11,10 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto bg-light rounded pe-4 py-3 py-lg-0">
             <a href="index.html" class="nav-item nav-link <?= uri_string() == '/' ? 'active' : '' ?>">Pendaftaran</a>
-            <a href="about.html" class="nav-item nav-link">About
+            <a href="#" class="nav-item nav-link">About
                 Us</a>
-            <a href="service.html" class="nav-item nav-link">Our Services</a>
-            <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+            <a href="#" class="nav-item nav-link">Our Services</a>
+            <a href="#" class="nav-item nav-link">Contact Us</a>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" style="display: inline;">
                     <img src="<?= base_url(); ?>/assets/img/default.svg" alt="Image_profile" class="image--cover"
@@ -25,7 +25,11 @@
                         <?php $string = $user->nm_pasien ?>
                         <?= $string = character_limiter($string, 15); ?>
                     </a>
-                    <a href="<?= base_url('/logout'); ?>" class="dropdown-item">Logout</a>
+                    <a href="<?= base_url('/logout'); ?>" class="dropdown-item">Logout
+                        <span style="color: #015fc9;">
+                            <i class="fas fa-sign-out-alt"></i>
+                        </span>
+                    </a>
                 </div>
             </div>
         </div>
