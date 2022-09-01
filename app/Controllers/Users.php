@@ -39,6 +39,12 @@ class Users extends BaseController
         }
     }
 
+    public function logout()
+    {
+        session()->remove('id_user');
+        return redirect()->to(site_url('/login'));
+    }
+
     public function pendaftaran()
     {
         return view('pages/users/index');
