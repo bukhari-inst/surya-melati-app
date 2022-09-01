@@ -13,6 +13,10 @@ class Users extends BaseController
 
     public function login()
     {
+        if (session('id_user')) {
+            return redirect()->to(site_url('/'));
+        }
+
         return view('pages/auth/login');
     }
 
