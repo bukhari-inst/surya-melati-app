@@ -17,9 +17,9 @@ class ModelPasien extends Model
         'no_rkm_medis', 'tgl_lahir'
     ];
 
-    public function getPasienWhereNoRkmMedis($noRkmMedis)
+    public function getPasienWhereNoRkmMedis($noRkmMedis = false)
     {
-        return $this->select('no_rkm_medis, tgl_lahir')
+        return $this->select('no_rkm_medis, tgl_lahir, nm_pasien')
             ->where('no_rkm_medis', $noRkmMedis)
             ->first();
     }
