@@ -30,7 +30,7 @@ class Users extends BaseController
             if ($date == $user->tgl_lahir) {
                 $params = ['id_user' => $user->no_rkm_medis];
                 session()->set($params);
-                return redirect()->to(site_url('/pendaftaran'));
+                return redirect()->to(site_url('/'));
             } else {
                 return redirect()->back()->with('error', 'Tanggal lahir tidak sesuai');
             }
@@ -43,10 +43,5 @@ class Users extends BaseController
     {
         session()->remove('id_user');
         return redirect()->to(site_url('/login'));
-    }
-
-    public function pendaftaran()
-    {
-        return view('pages/users/index');
     }
 }
