@@ -13,12 +13,13 @@ class Home extends BaseController
 
     public function index()
     {
-        $pasien = $this->ModelPasien->findAll();
+        $userId = session('id_user');
+        $user = $this->ModelPasien->getPasienWhereNoRkmMedis($userId);
 
-        // dd($pasien);
+        $data = [
+            'user' => $user,
+        ];
 
-        $data = [];
-
-        return view('pages/index');
+        return view('pages/users/index', $data);
     }
 }
