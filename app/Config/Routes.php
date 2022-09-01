@@ -40,6 +40,7 @@ $routes->get('/', 'Users::pendaftaran');
 $routes->get('/login', 'Users::login');
 $routes->post('/loginProcess', 'Users::loginProcess');
 $routes->get('/pendaftaran', 'Users::pendaftaran');
+$routes->get('/logout', 'Users::logout');
 
 /*
  * --------------------------------------------------------------------
