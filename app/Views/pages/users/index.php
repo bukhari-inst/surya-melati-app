@@ -33,39 +33,27 @@
 <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5">
     <a href="index.html" class="navbar-brand d-flex align-items-center">
         <h1 class="m-0">
-            <img class="img-fluid me-3" src="<?= base_url(); ?>/assets/img/icon/icon-02-primary.png" alt="" />Insure
+            <img class="img-fluid me-3" src="<?= base_url(); ?>/assets/img/surya-melati.png" alt="" />Surya melati
         </h1>
     </a>
     <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
-        <div class="navbar-nav mx-auto bg-light rounded pe-4 py-3 py-lg-0">
-            <a href="index.html" class="nav-item nav-link">Home</a>
+        <div class="navbar-nav ms-auto bg-light rounded pe-4 py-3 py-lg-0">
+            <a href="index.html" class="nav-item nav-link active">Pendaftaran</a>
             <a href="about.html" class="nav-item nav-link">About Us</a>
             <a href="service.html" class="nav-item nav-link">Our Services</a>
-            <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Pages</a>
-                <div class="dropdown-menu bg-light border-0 m-0">
-                    <a href="feature.html" class="dropdown-item">Features</a>
-                    <a href="appointment.html" class="dropdown-item active">Appointment</a>
-                    <a href="team.html" class="dropdown-item">Team Members</a>
-                    <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                    <a href="404.html" class="dropdown-item">404 Page</a>
-                </div>
-            </div>
             <a href="contact.html" class="nav-item nav-link">Contact Us</a>
-        </div>
-        <div class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" style="display: inline;">
-                <img src="<?= base_url(); ?>/assets/img/default.svg" alt="Image_profile" class="image--cover">
-            </a>
-            <div class="dropdown-menu bg-light border-0 m-0">
-                <a href="feature.html" class="dropdown-item">Features</a>
-                <a href="appointment.html" class="dropdown-item active">Appointment</a>
-                <a href="team.html" class="dropdown-item">Team Members</a>
-                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                <a href="404.html" class="dropdown-item">404 Page</a>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" style="display: inline;">
+                    <img src="<?= base_url(); ?>/assets/img/default.svg" alt="Image_profile" class="image--cover"
+                        style="max-width: 50px;">
+                </a>
+                <div class="dropdown-menu bg-light border-0 m-0">
+                    <a href="#" class="dropdown-item">Bukhari Inst</a>
+                    <a href="<?= base_url('/logout'); ?>" class="dropdown-item">Logout</a>
+                </div>
             </div>
         </div>
     </div>
@@ -76,16 +64,19 @@
 <!-- Page Header Start -->
 <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
     <div class="container py-5">
-        <h1 class="display-4 animated slideInDown mb-4">Appointment</h1>
+        <h1 class="display-4 animated slideInDown mb-4">Pendaftaran</h1>
         <nav aria-label="breadcrumb animated slideInDown">
             <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <!-- <li class="breadcrumb-item"><a href="#">Pendaftaran</a></li>
                 <li class="breadcrumb-item"><a href="#">Pages</a></li>
                 <li class="breadcrumb-item active" aria-current="page">
                     Appointment
-                </li>
+                </li> -->
             </ol>
         </nav>
+
+        <a href="#form" class=" btn btn-primary py-3 px-5 mt-4">Klik di sini <i
+                class="fas fa-hand-point-left fa-lg"></i></a>
     </div>
 </div>
 <!-- Page Header End -->
@@ -113,7 +104,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" id="form">
                 <div class="bg-light rounded p-5">
                     <form>
                         <div class="row g-3">
