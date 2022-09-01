@@ -10,8 +10,8 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto bg-light rounded pe-4 py-3 py-lg-0">
-            <a href="index.html" class="nav-item nav-link active">Pendaftaran</a>
-            <a href="about.html" class="nav-item nav-link <?= uri_string() == '/' ? 'active' : '' ?> ">About
+            <a href="index.html" class="nav-item nav-link <?= uri_string() == '/' ? 'active' : '' ?>">Pendaftaran</a>
+            <a href="about.html" class="nav-item nav-link">About
                 Us</a>
             <a href="service.html" class="nav-item nav-link">Our Services</a>
             <a href="contact.html" class="nav-item nav-link">Contact Us</a>
@@ -21,7 +21,10 @@
                         style="max-width: 50px;">
                 </a>
                 <div class="dropdown-menu bg-light border-0 m-0">
-                    <a href="#" class="dropdown-item">Bukhari Inst</a>
+                    <a href="#" class="dropdown-item">
+                        <?php $string = $user->nm_pasien ?>
+                        <?= $string = character_limiter($string, 15); ?>
+                    </a>
                     <a href="<?= base_url('/logout'); ?>" class="dropdown-item">Logout</a>
                 </div>
             </div>
