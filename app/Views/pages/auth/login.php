@@ -16,8 +16,8 @@
     <form class="p-3 mt-3" action="<?= base_url('/loginProcess') ?>" method="post">
         <?= csrf_field() ?>
         <div class="form-floating mb-3 d-flex align-items-center">
-            <input type="number" class="form-control" name="noRkmMedis" id="floatingInput"
-                placeholder="Nomor Rekam Medik" required>
+            <input type="text" class="form-control" name="noRkmMedis" id="floatingInput" placeholder="Nomor Rekam Medik"
+                required>
             <label for="floatingInput">Nomor rekam medik</label>
         </div>
         <div class="form-floating">
