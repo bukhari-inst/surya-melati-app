@@ -20,6 +20,6 @@ class Home extends BaseController
             'user' => $user,
         ];
 
-        return view('pages/users/index', $data);
+        return view('pages/users/pendaftaran', $data);
     }
 }
