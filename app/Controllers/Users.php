@@ -3,6 +3,11 @@
 namespace App\Controllers;
 
 use App\Models\ModelPasien;
+use CodeIgniter\HTTP\IncomingRequest;
+
+/** 
+ * @property IncomingRequest $request;
+ */
 
 class Users extends BaseController
 {
@@ -43,5 +48,11 @@ class Users extends BaseController
     {
         session()->remove('id_user');
         return redirect()->to(site_url('/login'));
+    }
+
+    public function getPoliklinik()
+    {
+        if ($this->request->isAJAX()) {
+        }
     }
 }
