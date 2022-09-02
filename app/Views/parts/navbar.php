@@ -11,10 +11,14 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto bg-light rounded pe-4 py-3 py-lg-0">
             <a href="index.html" class="nav-item nav-link <?= uri_string() == '/' ? 'active' : '' ?>">Pendaftaran</a>
-            <a href="#" class="nav-item nav-link">About
-                Us</a>
-            <a href="#" class="nav-item nav-link">Our Services</a>
-            <a href="#" class="nav-item nav-link">Contact Us</a>
+            <a href="<?= base_url('/riwayatPeriksa'); ?>"
+                class="nav-item nav-link <?= uri_string() == '/riwayatPeriksa' ? 'active' : '' ?>">Riwayat Periksa</a>
+            <a href="<?= base_url('/jadwalDokter'); ?>"
+                class="nav-item nav-link <?= uri_string() == '/jadwalDokter' ? 'active' : '' ?>">Jadwal Dokter</a>
+            <a href="<?= base_url('/informasiKamar'); ?>"
+                class="nav-item nav-link <?= uri_string() == '/informasiKamar' ? 'active' : '' ?>">Informasi Kamar</a>
+            <a href="<?= base_url('/pengaduan'); ?>"
+                class="nav-item nav-link <?= uri_string() == '/pengaduan' ? 'active' : '' ?>">Pengaduan</a>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" style="display: inline;">
                     <img src="<?= base_url(); ?>/assets/img/default.svg" alt="Image_profile" class="image--cover"
