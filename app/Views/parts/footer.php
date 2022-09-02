@@ -19,9 +19,10 @@
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
-                <h5 class="text-light mb-4">Address</h5>
+                <h5 class="text-light mb-4">Alamat</h5>
                 <p>
-                    <i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA
+                    <i class="fa fa-map-marker-alt me-3"></i>Jl. Ngadiluwih - Wates Km. 10, Desa Ngletih, Kandat 64173,
+                    Kediri, Jawa Timur
                 </p>
                 <p><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
                 <p><i class="fa fa-envelope me-3"></i>info@example.com</p>
