@@ -7,9 +7,10 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="" name="keywords" />
     <meta content="" name="description" />
+    <meta name="author" content="Bukhari_Inst">
 
     <!-- Favicon -->
-    <link href="<?= base_url(); ?>/assets/img/favicon.ico" rel="icon" />
+    <link href="<?= base_url(); ?>/assets/img/surya-melati.png" rel="icon" />
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,7 +32,11 @@
 
     <!-- Template Stylesheet -->
     <link href="<?= base_url(); ?>/assets/css/style.css" rel="stylesheet" />
+    <link href="<?= base_url(); ?>/assets/css/app.css" rel="stylesheet" />
     <link rel="stylesheet" href="<?= base_url(); ?>/assets/css/login.css" />
+
+    <!-- select2 -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
 </head>
 
