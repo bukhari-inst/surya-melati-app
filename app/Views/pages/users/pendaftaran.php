@@ -7,7 +7,8 @@
 <!-- Page Header Start -->
 <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
     <div class="container py-5">
-        <h1 class="display-4 animated slideInDown mb-4">Pendaftaran</h1>
+        <h1 class="display-4 animated slideInDown mb-1">Pendaftaran</h1>
+        <h6 class="display-6 fs-3 animated slideInDown mb-4">Antrian Pasien</h6>
         <nav aria-label="breadcrumb animated slideInDown">
             <ol class="breadcrumb mb-0">
                 <!-- <li class="breadcrumb-item"><a href="#">Pendaftaran</a></li>
@@ -30,14 +31,11 @@
         <div class="row g-5">
             <div class="col-lg-6 wow fadeIn" data-wow-delay="0.3s">
                 <h1 class="display-6 mb-5">
-                    We're Award Winning Insurance Company
+                    Daftarkan antrian Anda untuk besok!
                 </h1>
                 <p class="mb-5">
-                    Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed
-                    stet lorem sit clita duo justo magna dolore erat amet. Tempor erat
-                    elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet
-                    diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit
-                    clita duo justo magna.
+                    Tidak perlu menunggu lagi, Surya Melati menawarkan sistem yang memungkinkan
+                    pasien untuk mendaftar antrian secara online dan tidak perlu mengantri.
                 </p>
                 <div class="bg-light rounded p-3">
                     <div class="d-flex align-items-center bg-white rounded p-3">
@@ -53,39 +51,67 @@
                         <div class="row g-3">
                             <div class="col-sm-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="gname" placeholder="Gurdian Name" />
-                                    <label for="gname">Your Name</label>
+                                    <input type="text" class="form-control" id="gname" placeholder="Gurdian Name"
+                                        disabled />
+                                    <label for="gname">
+                                        <?php $string = $user->nm_pasien ?>
+                                        <?= $string = character_limiter($string, 15); ?>
+                                    </label>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" id="gmail" placeholder="Gurdian Email" />
-                                    <label for="gmail">Your Email</label>
+                                    <input type="text" class="form-control" id="rekammedik" placeholder="Gurdian Email"
+                                        disabled />
+                                    <label for="gmail"><?= $user->no_rkm_medis ?></label>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="cname" placeholder="Child Name" />
-                                    <label for="cname">Your Mobile</label>
+                                    <input type="date" class="form-control" id="tanggalkunjungan"
+                                        placeholder="Child Name" />
+                                    <label for="cname">Tanggal Kunjungan</label>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="cage" placeholder="Child Age" />
-                                    <label for="cage">Service Type</label>
+                                    <select class="js-example-basic-single" id="poliklinik" style="width: 100%;"
+                                        name=" state">
+                                        <option selected>Pilih Poliklinik Tujuan</option>
+                                        <option value="AL">Alabama</option>
+                                        ...
+                                        <option value="WY">Wyoming</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-floating">
+                                    <select class="js-example-basic-single" id="pilihdokter" style="width: 100%;"
+                                        name=" state">
+                                        <option selected>Pilih Dokter Tujuan</option>
+                                        <option value="AL">Alabama</option>
+                                        ...
+                                        <option value="WY">Wyoming</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-floating">
+                                    <select class="js-example-basic-single" id="carabayar" style="width: 100%;"
+                                        name=" state">
+                                        <option selected>Pilih Cara Bayar</option>
+                                        <option value="AL">Alabama</option>
+                                        ...
+                                        <option value="WY">Wyoming</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-12">
-                                <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Leave a message here" id="message"
-                                        style="height: 80px"></textarea>
-                                    <label for="message">Message</label>
+                                <div class="d-grid">
+                                    <button class="btn btn-primary py-3" type="submit">
+                                        Daftar Antrian <i class="fas fa-sign-in-alt"></i>
+                                    </button>
                                 </div>
-                            </div>
-                            <div class="col-12">
-                                <button class="btn btn-primary py-3 px-5" type="submit">
-                                    Get Appointment
-                                </button>
                             </div>
                         </div>
                     </form>
