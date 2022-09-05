@@ -5,6 +5,7 @@ namespace App\Controllers;
 use CodeIgniter\HTTP\IncomingRequest;
 use App\Models\ModelPasien;
 use App\Models\ModelPoliklinik;
+use App\Models\ModelDokter;
 
 /** 
  * @property IncomingRequest $request;
@@ -16,6 +17,7 @@ class Users extends BaseController
     {
         $this->ModelPasien = new ModelPasien();
         $this->ModelPoliklinik = new ModelPoliklinik();
+        $this->ModelDokter = new ModelDokter();
     }
 
     public function login()
@@ -77,6 +79,26 @@ class Users extends BaseController
 
             $msg = [
                 'data' => $valPoliklinik
+            ];
+            echo json_encode($msg);
+        }
+    }
+
+    public function getDokter()
+    {
+        if ($this->request->isAJAX()) {
+            $poliklinik = $this->request->getVar('poliklinik');
+
+            $dokter = $this->ModelDokter->getDokterWherePoli($poliklinik);
+
+            $valDokter = "";
+
+            foreach ($dokter as $dok) :
+                $valDokter .= '<option value="' . $dok->kd_dokter . '">' . $dok->nm_dokter . '</option>';
+            endforeach;
+
+            $msg = [
+                'data' => $valDokter
             ];
             echo json_encode($msg);
         }
