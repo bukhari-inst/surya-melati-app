@@ -72,7 +72,7 @@ class Users extends BaseController
             $valPoliklinik = "";
 
             foreach ($poliklinik as $poli) :
-                $valPoliklinik .= '<option value="' . $poli->kd_poli . '">' . $poli->nm_poli . '</option>';
+                $valPoliklinik .= '<option value="' . $poli->kd_poli . '">' . $poli->nm_poli . " " . $poli->jam_mulai . " - " . $poli->jam_selesai . '</option>';
             endforeach;
 
             $msg = [
