@@ -76,29 +76,23 @@
                             <div class="col-sm-6">
                                 <div class="form-floating">
                                     <select class="js-example-basic-single" id="poliklinik" style="width: 100%;"
-                                        name=" state">
-                                        <!-- <option selected>Pilih Poliklinik Tujuan</option>
-                                        <option value="AL">Alabama</option>
-                                        ...
-                                        <option value="WY">Wyoming</option> -->
+                                        name=" poliklinik">
+                                        <option selected>Pilih Poliklinik</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-floating">
                                     <select class="js-example-basic-single" id="pilihdokter" style="width: 100%;"
-                                        name=" state">
-                                        <option selected>Pilih Dokter Tujuan</option>
-                                        <option value="AL">Alabama</option>
-                                        ...
-                                        <option value="WY">Wyoming</option>
+                                        name="pilihdokter">
+                                        <option selected>Pilih Dokter</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-floating">
                                     <select class="js-example-basic-single" id="carabayar" style="width: 100%;"
-                                        name=" state">
+                                        name="carabayar">
                                         <option selected>Pilih Cara Bayar</option>
                                         <option value="AL">Alabama</option>
                                         ...
