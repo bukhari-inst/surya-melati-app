@@ -9,8 +9,6 @@ class ModelPasien extends Model
     protected $table = 'pasien';
     protected $primaryKey = 'no_rkm_medis';
 
-    // protected $useTimestamps = false;
-    // protected $useSoftDeletes = false;
     protected $returnType = 'object';
 
     protected $allowedFields = [
