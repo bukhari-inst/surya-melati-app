@@ -92,11 +92,28 @@
                             <div class="col-sm-6">
                                 <div class="form-floating">
                                     <select class="js-example-basic-single" id="carabayar" style="width: 100%;"
-                                        name="carabayar">
+                                        name="payment" onchange="admSelectCheck(this);">
                                         <option selected>Pilih Cara Bayar</option>
-                                        <option value="AL">Alabama</option> bpjs kesehatan, bpjs ketenagakerjaan,
-                                        jasaraharja, halodoc
+                                        <?php foreach ($payment as $pay) : ?>
+                                        <option id="<?= $pay->png_jawab; ?>" value="<?= $pay->kd_pj; ?>">
+                                            <?= $pay->png_jawab; ?>
+                                        </option>
+                                        <?php endforeach ?>
                                     </select>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div id="admDivCheck" style="display:none;">
+                                    <!-- <img id="image_upload_preview" width="200px" src="images/upload-rujukan.png" onclick="upload_rujukan()" style="cursor:pointer;" />-->
+                                    <div class="alert alert-danger" role="alert">
+                                        <p>Anda memilih cara
+                                            bayar BPJS. Apakah anda memiliki surat rujukan atau surat kontrol?
+                                            Jika tidak, silahkan pilih cara bayar umum. Jika ya, silahkan
+                                            lanjutkan pendaftaran anda dan Jangan lupa membawa surat Rujukan atau surat
+                                            kontrol ketika periksa
+                                        </p>
+                                    </div>
+                                    <input name="file" id="inputFile" type="file" style="display:none;" />
                                 </div>
                             </div>
                             <div class="col-12">
