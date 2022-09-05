@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class ModelCaraBayar extends Model
 {
-    protected $table = 'dokter';
+    protected $table = 'penjab';
     protected $primaryKey = 'kd_pj';
 
     protected $returnType = 'object';
