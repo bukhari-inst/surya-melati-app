@@ -2,8 +2,9 @@
 
 namespace App\Controllers;
 
-use App\Models\ModelPasien;
 use CodeIgniter\HTTP\IncomingRequest;
+use App\Models\ModelPasien;
+use App\Models\ModelPoliklinik;
 
 /** 
  * @property IncomingRequest $request;
@@ -14,6 +15,7 @@ class Users extends BaseController
     public function __construct()
     {
         $this->ModelPasien = new ModelPasien();
+        $this->ModelPoliklinik = new ModelPoliklinik();
     }
 
     public function login()
@@ -53,6 +55,30 @@ class Users extends BaseController
     public function getPoliklinik()
     {
         if ($this->request->isAJAX()) {
+            $tanggal = $this->request->getVar('tanggal');
+            $defineDate = date('D', strtotime($tanggal));
+            $listDay = array(
+                'Sun' => 'AKHAD',
+                'Mon' => 'SENIN',
+                'Tue' => 'SELASA',
+                'Wed' => 'RABU',
+                'Thu' => 'KAMIS',
+                'Fri' => 'JUMAT',
+                'Sat' => 'SABTU'
+            );
+            $day = $listDay[$defineDate];
+            $poliklinik = $this->ModelPoliklinik->getPoliWhereDay($day);
+
+            $valPoliklinik = "";
+
+            foreach ($poliklinik as $poli) :
+                $valPoliklinik .= '<option value="' . $poli->kd_poli . '">' . $poli->nm_poli . '</option>';
+            endforeach;
+
+            $msg = [
+                'data' => $valPoliklinik
+            ];
+            echo json_encode($msg);
         }
     }
 }
