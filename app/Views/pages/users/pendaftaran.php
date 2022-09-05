@@ -77,10 +77,10 @@
                                 <div class="form-floating">
                                     <select class="js-example-basic-single" id="poliklinik" style="width: 100%;"
                                         name=" state">
-                                        <option selected>Pilih Poliklinik Tujuan</option>
+                                        <!-- <option selected>Pilih Poliklinik Tujuan</option>
                                         <option value="AL">Alabama</option>
                                         ...
-                                        <option value="WY">Wyoming</option>
+                                        <option value="WY">Wyoming</option> -->
                                     </select>
                                 </div>
                             </div>
