@@ -9,7 +9,8 @@
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js" type="text/javascript">
 </script>
 <script>
-function getFieldDataPendaftaran() {
+// select poliklinik
+function getFieldDataPoliklinik() {
     $('#tanggalkunjungan').change(function(e) {
         $.ajax({
             type: "post",
@@ -31,8 +32,33 @@ function getFieldDataPendaftaran() {
     });
 }
 
+// select dokter
+function getFieldDataDokter() {
+    $('#poliklinik').change(function(e) {
+        $.ajax({
+            type: "post",
+            url: "<?= site_url('/getDokter') ?>",
+            data: {
+                poliklinik: $(this).val()
+            },
+            dataType: "json",
+            success: function(response) {
+                if (response.data) {
+                    $(' #pilihdokter').html(response.data);
+                    $(' #pilihdokter').select2
+                }
+            },
+            error: function(xhr, thrownError) {
+                alert(xhr.status + " \ n " + xhr.responseText + " \ n " + thrownError);
+            }
+        });
+    });
+}
+
 $(document).ready(function() {
-    getFieldDataPendaftaran();
+    getFieldDataPoliklinik();
+    getFieldDataDokter();
+
     $('.js-example-basic-single').select2({
         width: 'resolve'
     });
