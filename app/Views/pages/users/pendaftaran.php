@@ -94,9 +94,8 @@
                                     <select class="js-example-basic-single" id="carabayar" style="width: 100%;"
                                         name="carabayar">
                                         <option selected>Pilih Cara Bayar</option>
-                                        <option value="AL">Alabama</option>
-                                        ...
-                                        <option value="WY">Wyoming</option>
+                                        <option value="AL">Alabama</option> bpjs kesehatan, bpjs ketenagakerjaan,
+                                        jasaraharja, halodoc
                                     </select>
                                 </div>
                             </div>
