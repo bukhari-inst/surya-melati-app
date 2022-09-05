@@ -13,13 +13,16 @@ function getFieldDataPendaftaran() {
     $('#tanggalkunjungan').change(function(e) {
         $.ajax({
             type: "post",
-            url: "<?= site_url('users/getPoliklinik') ?>",
+            url: "<?= site_url('/getPoliklinik') ?>",
             data: {
-                poliklinik: $(this).val()
+                tanggal: $(this).val()
             },
             dataType: "json",
             success: function(response) {
-
+                if (response.data) {
+                    $(' #poliklinik ').html(response.data);
+                    $(' #poliklinik ').select2
+                }
             },
             error: function(xhr, thrownError) {
                 alert(xhr.status + " \ n " + xhr.responseText + " \ n " + thrownError);
