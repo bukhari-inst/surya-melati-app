@@ -107,10 +107,10 @@
                                     <!-- <img id="image_upload_preview" width="200px" src="images/upload-rujukan.png" onclick="upload_rujukan()" style="cursor:pointer;" />-->
                                     <div class="alert alert-danger" role="alert">
                                         <p>Anda memilih cara
-                                            bayar BPJS. Apakah anda memiliki surat rujukan atau surat kontrol?
-                                            Jika tidak, silahkan pilih cara bayar umum. Jika ya, silahkan
+                                            bayar BPJS. Apakah anda memiliki surat rujukan atau surat kontrol? <br>
+                                            Jika tidak, silahkan pilih cara bayar umum. <br> Jika ya, silahkan
                                             lanjutkan pendaftaran anda dan Jangan lupa membawa surat Rujukan atau surat
-                                            kontrol ketika periksa
+                                            kontrol ketika periksa.
                                         </p>
                                     </div>
                                     <input name="file" id="inputFile" type="file" style="display:none;" />
