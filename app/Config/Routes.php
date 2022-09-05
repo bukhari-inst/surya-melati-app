@@ -39,6 +39,7 @@ $routes->get('/', 'Home::index');
 $routes->get('/login', 'Users::login');
 $routes->post('/loginProcess', 'Users::loginProcess');
 $routes->get('/logout', 'Users::logout');
+$routes->add('/getPoliklinik', 'Users::getPoliklinik');
 
 /*
  * --------------------------------------------------------------------
