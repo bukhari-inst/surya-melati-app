@@ -55,6 +55,19 @@ function getFieldDataDokter() {
     });
 }
 
+function admSelectCheck(nameSelect) {
+    if (nameSelect) {
+        admOptionValue = document.getElementById("BPJS").value;
+        if (admOptionValue == nameSelect.value) {
+            document.getElementById("admDivCheck").style.display = "block";
+        } else {
+            document.getElementById("admDivCheck").style.display = "none";
+        }
+    } else {
+        document.getElementById("admDivCheck").style.display = "none";
+    }
+}
+
 $(document).ready(function() {
     getFieldDataPoliklinik();
     getFieldDataDokter();
