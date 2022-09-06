@@ -6,6 +6,7 @@ use CodeIgniter\HTTP\IncomingRequest;
 use App\Models\ModelPasien;
 use App\Models\ModelPoliklinik;
 use App\Models\ModelDokter;
+use App\Models\ModelRegistrasiAntrianPasien;
 
 /** 
  * @property IncomingRequest $request;
@@ -18,6 +19,7 @@ class Users extends BaseController
         $this->ModelPasien = new ModelPasien();
         $this->ModelPoliklinik = new ModelPoliklinik();
         $this->ModelDokter = new ModelDokter();
+        $this->ModelRegistrasiAntrianPasien = new ModelRegistrasiAntrianPasien();
     }
 
     public function login()
@@ -102,5 +104,10 @@ class Users extends BaseController
             ];
             echo json_encode($msg);
         }
+    }
+
+    public function registrasiAntrian()
+    {
+        $this->ModelRegistrasiAntrianPasien->save([]);
     }
 }
