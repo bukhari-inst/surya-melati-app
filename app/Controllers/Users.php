@@ -108,6 +108,80 @@ class Users extends BaseController
 
     public function registrasiAntrian()
     {
-        $this->ModelRegistrasiAntrianPasien->save([]);
+        if (!$this->validate([
+            'norekammedik' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Nomor rekam medik tidak boleh kosong',
+                ]
+            ],
+            'tanggalkunjungan' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Tanggal kunjungan tidak boleh kosong',
+                ]
+            ],
+            'poliklinik' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Poliklinik tidak boleh kosong',
+                ]
+            ],
+            'pilihdokter' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Dokter tidak boleh kosong',
+                ]
+            ],
+            'payment' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'payment tidak boleh kosong',
+                ]
+            ]
+        ])) {
+            return redirect()->back()->withInput();
+        }
+
+        $noRekamMedik = $this->request->getVar('norekammedik');
+        $tanggalKunjungan = $this->request->getVar('tanggalkunjungan');
+        $tanggalreg = date('Y/m/d', strtotime($tanggalKunjungan));
+        $poliklinik = $this->request->getVar('poliklinik');
+        $pilihDokter = $this->request->getVar('pilihdokter');
+        $payment = $this->request->getVar('payment');
+
+        // dd($noRekamMedik, $tanggalKunjungan, $tanggalreg, $poliklinik, $pilihDokter, $payment);
+
+        $valNoReg = 0;
+        $noRegAkhir = $this->ModelRegistrasiAntrianPasien->getLastNoRegWhereDokterAndTglReg($tanggalKunjungan, $pilihDokter);
+
+        if ($noRegAkhir->no_reg != null) {
+            $noUrutReg = $noRegAkhir->no_reg;
+            $valNoReg = $noUrutReg + 1;
+        } else {
+            $valNoReg = 1;
+        }
+        dd();
+
+        $this->ModelRegistrasiAntrianPasien->save([
+            'no_reg' => $valNoReg,
+            'no_rawat' => '',
+            'tgl_registrasi' => $tanggalKunjungan,
+            'jam_reg' => date('H:i:s'),
+            'kd_dokter' => $pilihDokter,
+            'no_rkm_medis' => $noRekamMedik,
+            'kd_poli' => $poliklinik,
+            'p_jawab' => '',
+            'almt_pj' => '',
+            'hubunganpj' => '',
+            'biaya_reg' => '',
+            'stts' => 'Belum',
+            'stts_daftar' => 'Lama',
+            'status_lanjut' => 'Ralan',
+            'kd_pj' => $payment,
+            'umurdaftar' => '',
+            'sttsumur' => 'Th',
+            'status_bayar' => 'Belum Bayar',
+        ]);
     }
 }
