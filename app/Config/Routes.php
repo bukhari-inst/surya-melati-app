@@ -41,6 +41,7 @@ $routes->post('/loginProcess', 'Users::loginProcess');
 $routes->get('/logout', 'Users::logout');
 $routes->add('/getPoliklinik', 'Users::getPoliklinik');
 $routes->add('/getDokter', 'Users::getDokter');
+$routes->post('/registrasiAntrian', 'Users::registrasiAntrian');
 
 /*
  * --------------------------------------------------------------------
