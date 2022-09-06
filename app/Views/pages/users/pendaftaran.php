@@ -47,12 +47,13 @@
             </div>
             <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" id="form">
                 <div class="bg-light rounded p-5">
-                    <form>
+                    <form action="<?= base_url('/registrasiAntrian'); ?>" method="post" enctype="multipart/form-data">
+                        <?= csrf_field() ?>
                         <div class="row g-3">
                             <div class="col-sm-6">
                                 <div class="form-floating">
                                     <input type="text" class="form-control" id="gname" placeholder="Gurdian Name"
-                                        disabled />
+                                        name="namapasien" disabled />
                                     <label for="gname">
                                         <?php $string = $user->nm_pasien ?>
                                         <?= $string = character_limiter($string, 15); ?>
@@ -62,15 +63,15 @@
                             <div class="col-sm-6">
                                 <div class="form-floating">
                                     <input type="text" class="form-control" id="rekammedik" placeholder="Gurdian Email"
-                                        disabled />
+                                        name="norekammedik" disabled />
                                     <label for="gmail"><?= $user->no_rkm_medis ?></label>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-floating">
                                     <input type="date" class="form-control" id="tanggalkunjungan"
-                                        placeholder="Child Name" />
-                                    <label for="cname">Tanggal Kunjungan</label>
+                                        placeholder="Child Name" name="tanggalkunjungan" placeholder="/>
+                                    <label for=" cname">Tanggal Kunjungan</label>
                                 </div>
                             </div>
                             <div class="col-sm-6">
