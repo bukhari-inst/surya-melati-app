@@ -53,7 +53,7 @@
                             <div class="col-sm-6">
                                 <div class="form-floating">
                                     <input type="text" class="form-control" id="gname" placeholder="Gurdian Name"
-                                        name="namapasien" disabled />
+                                        name="namapasien" readonly />
                                     <label for="gname">
                                         <?php $string = $user->nm_pasien ?>
                                         <?= $string = character_limiter($string, 15); ?>
@@ -62,39 +62,39 @@
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="rekammedik" placeholder="Gurdian Email"
-                                        name="norekammedik" disabled />
-                                    <label for="gmail"><?= $user->no_rkm_medis ?></label>
+                                    <input type="text" class="form-control text-center" id="rekammedik"
+                                        placeholder="Gurdian Email" value="<?= $user->no_rkm_medis ?>"
+                                        name="norekammedik" readonly style="padding-bottom: 1.625rem;" />
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-floating">
                                     <input type="date" class="form-control" id="tanggalkunjungan"
-                                        placeholder="Child Name" name="tanggalkunjungan" placeholder="/>
-                                    <label for=" cname">Tanggal Kunjungan</label>
+                                        placeholder="Child Name" name="tanggalkunjungan" required />
+                                    <label for="cname">Tanggal Kunjungan</label>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-floating">
                                     <select class="js-example-basic-single" id="poliklinik" style="width: 100%;"
-                                        name=" poliklinik">
-                                        <option selected>Pilih Poliklinik</option>
+                                        name=" poliklinik" required>
+                                        <option value="">Pilih Poliklinik</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-floating">
                                     <select class="js-example-basic-single" id="pilihdokter" style="width: 100%;"
-                                        name="pilihdokter">
-                                        <option selected>Pilih Dokter</option>
+                                        name="pilihdokter" required>
+                                        <option value="">Pilih Dokter</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-floating">
                                     <select class="js-example-basic-single" id="carabayar" style="width: 100%;"
-                                        name="payment" onchange="admSelectCheck(this);">
-                                        <option selected>Pilih Cara Bayar</option>
+                                        name="payment" onchange="admSelectCheck(this);" required>
+                                        <option value="">Pilih Cara Bayar</option>
                                         <?php foreach ($payment as $pay) : ?>
                                         <option id="<?= $pay->png_jawab; ?>" value="<?= $pay->kd_pj; ?>">
                                             <?= $pay->png_jawab; ?>
