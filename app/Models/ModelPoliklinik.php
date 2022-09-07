@@ -24,4 +24,9 @@ class ModelPoliklinik extends Model
             ->groupBy('poliklinik.kd_poli')
             ->findAll();
     }
+
+    public function getPoliWhereKdpoli($kdPoli = false)
+    {
+        return $this->where(['kd_poli' => $kdPoli])->first();
+    }
 }
