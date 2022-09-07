@@ -18,9 +18,13 @@ class ModelRegistrasiAntrianPasien extends Model
 
     public function getLastNoRegWhereDokterAndTglReg($dokter = false, $tanggalRreg = false)
     {
-        return $this->selectMax('no_reg')
-            ->where('kd_dokter', $dokter)
-            ->where('tgl_registrasi', $tanggalRreg)
-            ->first();
+        $query = $this->db->query("SELECT max(no_reg) as no_reg FROM reg_periksa WHERE kd_dokter='$dokter' AND tgl_registrasi='$tanggalRreg'");
+        return $query->getRowObject();
+    }
+
+    public function getLastNoRawatWhereTglReg($tanggalRreg = false)
+    {
+        $query = $this->db->query("SELECT max(no_rawat) as no_rawat FROM reg_periksa WHERE tgl_registrasi='$tanggalRreg'");
+        return $query->getRowObject();
     }
 }
