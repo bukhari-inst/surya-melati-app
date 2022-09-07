@@ -14,6 +14,7 @@ use App\Models\ModelRegistrasiAntrianPasien;
 
 class Users extends BaseController
 {
+    protected $ModelPoliklinik;
     public function __construct()
     {
         $this->ModelPasien = new ModelPasien();
@@ -152,34 +153,52 @@ class Users extends BaseController
 
         // dd($noRekamMedik, $tanggalKunjungan, $tanggalreg, $poliklinik, $pilihDokter, $payment);
 
-        $valNoReg = 0;
-        $noRegAkhir = $this->ModelRegistrasiAntrianPasien->getLastNoRegWhereDokterAndTglReg($tanggalKunjungan, $pilihDokter);
+        $valNoReg = '';
+        $noRegAkhir = $this->ModelRegistrasiAntrianPasien->getLastNoRegWhereDokterAndTglReg($pilihDokter, $tanggalKunjungan);
 
         if ($noRegAkhir->no_reg != null) {
-            $noUrutReg = $noRegAkhir->no_reg;
-            $valNoReg = $noUrutReg + 1;
+            $no_urut_reg = substr($noRegAkhir->no_reg, 0, 3);
+            $valNoReg = sprintf('%03s', ($no_urut_reg + 1));
         } else {
-            $valNoReg = 1;
+            $valNoReg = '001';
         }
-        dd();
+
+        $valNoRawat = '';
+        $noRawatAkhir = $this->ModelRegistrasiAntrianPasien->getLastNoRawatWhereTglReg($tanggalKunjungan);
+
+        if ($noRawatAkhir->no_rawat != null) {
+            $no_urut_rawat = substr($noRawatAkhir->no_rawat, 11, 6);
+            $valNoRawat = $tanggalreg . '/' . sprintf('%06s', ($no_urut_rawat + 1));
+        } else {
+            $valNoRawat = $tanggalreg . '/' . '000001';
+        }
+
+        $nmKeluarga = $this->ModelPasien->getPasienWhereNoRkmMedis($noRekamMedik);
+        $biayaReg = $this->ModelPoliklinik->getPoliWhereKdpoli($poliklinik);
+
+        //menentukan umur sekarang
+        list($cY, $cm, $cd) = explode('-', date('Y-m-d'));
+        list($Y, $m, $d) = explode('-', date('Y-m-d', strtotime($nmKeluarga->tgl_lahir)));
+        $umurdaftar = $cY - $Y;
+        dd($umurdaftar);
 
         $this->ModelRegistrasiAntrianPasien->save([
             'no_reg' => $valNoReg,
-            'no_rawat' => '',
+            'no_rawat' => $valNoRawat,
             'tgl_registrasi' => $tanggalKunjungan,
             'jam_reg' => date('H:i:s'),
             'kd_dokter' => $pilihDokter,
             'no_rkm_medis' => $noRekamMedik,
             'kd_poli' => $poliklinik,
-            'p_jawab' => '',
-            'almt_pj' => '',
-            'hubunganpj' => '',
-            'biaya_reg' => '',
+            'p_jawab' => $nmKeluarga->namakeluarga,
+            'almt_pj' => $nmKeluarga->alamat,
+            'hubunganpj' => $nmKeluarga->keluarga,
+            'biaya_reg' => $biayaReg->registrasilama,
             'stts' => 'Belum',
             'stts_daftar' => 'Lama',
             'status_lanjut' => 'Ralan',
             'kd_pj' => $payment,
-            'umurdaftar' => '',
+            'umurdaftar' => $umurdaftar,
             'sttsumur' => 'Th',
             'status_bayar' => 'Belum Bayar',
         ]);
