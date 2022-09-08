@@ -20,6 +20,7 @@ class Home extends BaseController
         $payment = $this->ModelCaraBayar->getSpecificPay();
 
         $data = [
+            'validation' => \Config\Services::validation(),
             'user' => $user,
             'payment' => $payment,
         ];
