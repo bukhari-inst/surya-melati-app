@@ -182,27 +182,6 @@ class Users extends BaseController
         $umurdaftar = $cY - $Y;
 
         $this->ModelRegistrasiAntrianPasien->save([
-            'no_rawat' => '2022/01/01/000001',
-            'no_reg' => $valNoReg,
-            'tgl_registrasi' => $tanggalKunjungan,
-            'jam_reg' => date('H:i:s'),
-            'kd_dokter' => $pilihDokter,
-            'no_rkm_medis' => $noRekamMedik,
-            'kd_poli' => $poliklinik,
-            'p_jawab' => $nmKeluarga->namakeluarga,
-            'almt_pj' => $nmKeluarga->alamat,
-            'hubunganpj' => $nmKeluarga->keluarga,
-            'biaya_reg' => $biayaReg->registrasilama,
-            'stts' => 'Belum',
-            'stts_daftar' => 'Lama',
-            'status_lanjut' => 'Ralan',
-            'kd_pj' => $payment,
-            'umurdaftar' => $umurdaftar,
-            'sttsumur' => 'Th',
-            'status_bayar' => 'Belum Bayar',
-        ]);
-
-        $data = [
             'no_rawat' => $valNoRawat,
             'no_reg' => $valNoReg,
             'tgl_registrasi' => $tanggalKunjungan,
@@ -221,9 +200,7 @@ class Users extends BaseController
             'umurdaftar' => $umurdaftar,
             'sttsumur' => 'Th',
             'status_bayar' => 'Belum Bayar',
-        ];
-        dd($data);
-        // return (bool) $this->ModelRegistrasiAntrianPasien->insert($data);
+        ]);
 
         session()->setFlashdata('success', 'Berhasil daftar antrian.');
         return redirect()->to('/')->withInput();
