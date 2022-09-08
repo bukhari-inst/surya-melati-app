@@ -18,9 +18,49 @@
                 </li> -->
             </ol>
         </nav>
-
-        <a href="#form" class=" btn btn-primary py-3 px-5 mt-4">Klik di sini <i
+        <a href="#form" class=" btn btn-primary py-3 px-5 mt-4 mb-5">Klik di sini <i
                 class="fas fa-hand-point-left fa-lg"></i></a>
+
+        <div class="row">
+            <div class="col-12">
+                <?php if ($validation->getError('norekammedik')) : ?>
+                <div class="text-center alert alert-danger" role="alert">
+                    <?= $validation->getError('norekammedik') ?>
+                </div>
+                <?php endif; ?>
+                <?php if ($validation->getError('tanggalkunjungan')) : ?>
+                <div class="text-center alert alert-danger" role="alert">
+                    <?= $validation->getError('tanggalkunjungan') ?>
+                </div>
+                <?php endif; ?>
+                <?php if ($validation->getError('poliklinik')) : ?>
+                <div class="text-center alert alert-danger" role="alert">
+                    <?= $validation->getError('poliklinik') ?>
+                </div>
+                <?php endif; ?>
+                <?php if ($validation->getError('pilihdokter')) : ?>
+                <div class="text-center alert alert-danger" role="alert">
+                    <?= $validation->getError('pilihdokter') ?>
+                </div>
+                <?php endif; ?>
+                <?php if ($validation->getError('payment')) : ?>
+                <div class="text-center alert alert-danger" role="alert">
+                    <?= $validation->getError('payment') ?>
+                </div>
+                <?php endif; ?>
+
+                <?php if (session()->getFlashdata('success')) : ?>
+                <div class="text-center alert alert-success" role="alert">
+                    <?= session()->getFlashdata('success') ?>
+                </div>
+                <?php endif; ?>
+                <?php if (session()->getFlashdata('error')) : ?>
+                <div class="text-center alert alert-danger" role="alert">
+                    <?= session()->getFlashdata('error') ?>
+                </div>
+                <?php endif; ?>
+            </div>
+        </div>
     </div>
 </div>
 <!-- Page Header End -->
@@ -106,7 +146,7 @@
                             <div class="col-12">
                                 <div id="admDivCheck" style="display:none;">
                                     <!-- <img id="image_upload_preview" width="200px" src="images/upload-rujukan.png" onclick="upload_rujukan()" style="cursor:pointer;" />-->
-                                    <div class="alert alert-danger" role="alert">
+                                    <div class="text-center alert alert-danger" role="alert">
                                         <p>Anda memilih cara
                                             bayar BPJS. Apakah anda memiliki surat rujukan atau surat kontrol? <br>
                                             Jika tidak, silahkan pilih cara bayar umum. <br> Jika ya, silahkan
