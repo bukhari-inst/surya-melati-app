@@ -42,6 +42,7 @@ $routes->get('/logout', 'Users::logout');
 $routes->add('/getPoliklinik', 'Users::getPoliklinik');
 $routes->add('/getDokter', 'Users::getDokter');
 $routes->post('/registrasiAntrian', 'Users::registrasiAntrian');
+$routes->get('/antrianSekarang', 'Users::antrianSekarang');
 
 /*
  * --------------------------------------------------------------------
