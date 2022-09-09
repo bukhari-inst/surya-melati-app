@@ -8,8 +8,8 @@
                         style="max-width: 64px;" />Surya melati
                 </h1>
                 <p>
-                    Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat
-                    ipsum et lorem et sit, sed stet lorem sit clita
+                    Surya Melati menawarkan pelayanan kesehatan kepada masyarakat. Tim profesional kesehatan kami siap
+                    membantu Anda mendapatkan layanan berkualitas dan tetap sehat.
                 </p>
                 <div class="d-flex pt-2">
                     <a class="btn btn-square me-1" href=""><i class="fab fa-twitter"></i></a>
