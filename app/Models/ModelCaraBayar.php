@@ -22,6 +22,7 @@ class ModelCaraBayar extends Model
             ->orLike('png_jawab', 'BPJS KETENAGAKERJAAN')
             ->orLike('png_jawab', 'JASA RAHARJA')
             ->orLike('png_jawab', 'HALODOC')
+            ->orLike('png_jawab', 'UMUM')
             ->findAll();
     }
 }
