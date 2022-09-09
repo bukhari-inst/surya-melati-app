@@ -203,6 +203,23 @@ class Users extends BaseController
         ]);
 
         session()->setFlashdata('success', 'Berhasil daftar antrian.');
-        return redirect()->to('/')->withInput();
+        return redirect()->to('/antrianSekarang')->withInput();
+    }
+
+    public function antrianSekarang()
+    {
+        $userId = session('id_user');
+        $user = $this->ModelPasien->getPasienWhereNoRkmMedis($userId);
+        $dateToday = strtotime(date('Y-d-m'));
+        $lastAntrian = $this->ModelRegistrasiAntrianPasien->getLastAntrian($userId);
+
+        $data = [
+            'user' => $user,
+            'dateToday' => $dateToday,
+            'lastAntrian' => $lastAntrian
+        ];
+        // dd($data);
+
+        return view('pages/users/antrian_sekarang', $data);
     }
 }
