@@ -12,7 +12,8 @@
         <div class="navbar-nav ms-auto bg-light rounded pe-4 py-3 py-lg-0">
             <a href="index.html" class="nav-item nav-link <?= uri_string() == '/' ? 'active' : '' ?>">Pendaftaran</a>
             <a href="<?= base_url('/riwayatPeriksa'); ?>"
-                class="nav-item nav-link <?= uri_string() == '/riwayatPeriksa' ? 'active' : '' ?>">Riwayat Periksa</a>
+                class="nav-item nav-link <?= uri_string() == '/riwayatPeriksa' || '/antrianSekarang' ? 'active' : '' ?>">Riwayat
+                Periksa</a>
             <a href="<?= base_url('/jadwalDokter'); ?>"
                 class="nav-item nav-link <?= uri_string() == '/jadwalDokter' ? 'active' : '' ?>">Jadwal Dokter</a>
             <a href="<?= base_url('/informasiKamar'); ?>"
