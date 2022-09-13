@@ -14,13 +14,18 @@ use App\Models\ModelRegistrasiAntrianPasien;
 
 class Users extends BaseController
 {
-    // protected $ModelPoliklinik;
+    protected $ModelPoliklinik,
+        $ModelPasien,
+        $ModelRegistrasiAntrianPasien,
+        $ModelDokter;
+
     public function __construct()
     {
-        $this->ModelPasien = new ModelPasien();
         $this->ModelPoliklinik = new ModelPoliklinik();
+        $this->ModelPasien = new ModelPasien();
         $this->ModelDokter = new ModelDokter();
         $this->ModelRegistrasiAntrianPasien = new ModelRegistrasiAntrianPasien();
+        $this->today = date('Y-m-d');
     }
 
     public function login()
@@ -109,113 +114,131 @@ class Users extends BaseController
 
     public function registrasiAntrian()
     {
-        if (!$this->validate([
-            'norekammedik' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Nomor rekam medik tidak boleh kosong',
-                ]
-            ],
-            'tanggalkunjungan' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Tanggal kunjungan tidak boleh kosong',
-                ]
-            ],
-            'poliklinik' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Poliklinik tidak boleh kosong',
-                ]
-            ],
-            'pilihdokter' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Dokter tidak boleh kosong',
-                ]
-            ],
-            'payment' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'payment tidak boleh kosong',
-                ]
-            ]
-        ])) {
-            return redirect()->back()->withInput();
-        }
-
-        $noRekamMedik = $this->request->getVar('norekammedik');
+        $today = strtotime($this->today);
         $tanggalKunjungan = $this->request->getVar('tanggalkunjungan');
-        $tanggalreg = date('Y/m/d', strtotime($tanggalKunjungan));
-        $poliklinik = $this->request->getVar('poliklinik');
-        $pilihDokter = $this->request->getVar('pilihdokter');
-        $payment = $this->request->getVar('payment');
+        $valTanggalKunjungan = strtotime($tanggalKunjungan);
+        $lastAntrian = $this->ModelRegistrasiAntrianPasien->getLastAntrian(session('id_user'));
+        $lastTglAntrian = strtotime($lastAntrian->tgl_registrasi);
 
-        // dd($noRekamMedik, $tanggalKunjungan, $tanggalreg, $poliklinik, $pilihDokter, $payment);
+        // dd($lastAntrian->status_bayar);
+        if ($lastAntrian->status_bayar != 'Belum Bayar') {
+            if ($valTanggalKunjungan != $today && $valTanggalKunjungan > $today) {
+                if ($valTanggalKunjungan != $lastTglAntrian) {
+                    if (!$this->validate([
+                        'norekammedik' => [
+                            'rules' => 'required',
+                            'errors' => [
+                                'required' => 'Nomor rekam medik tidak boleh kosong',
+                            ]
+                        ],
+                        'tanggalkunjungan' => [
+                            'rules' => 'required',
+                            'errors' => [
+                                'required' => 'Tanggal kunjungan tidak boleh kosong',
+                            ]
+                        ],
+                        'poliklinik' => [
+                            'rules' => 'required',
+                            'errors' => [
+                                'required' => 'Poliklinik tidak boleh kosong',
+                            ]
+                        ],
+                        'pilihdokter' => [
+                            'rules' => 'required',
+                            'errors' => [
+                                'required' => 'Dokter tidak boleh kosong',
+                            ]
+                        ],
+                        'payment' => [
+                            'rules' => 'required',
+                            'errors' => [
+                                'required' => 'payment tidak boleh kosong',
+                            ]
+                        ]
+                    ])) {
+                        return redirect()->back()->withInput();
+                    }
 
-        $valNoReg = '';
-        $noRegAkhir = $this->ModelRegistrasiAntrianPasien->getLastNoRegWhereDokterAndTglReg($pilihDokter, $tanggalKunjungan);
+                    $noRekamMedik = $this->request->getVar('norekammedik');
+                    $tanggalreg = date('Y/m/d', strtotime($tanggalKunjungan));
+                    $poliklinik = $this->request->getVar('poliklinik');
+                    $pilihDokter = $this->request->getVar('pilihdokter');
+                    $payment = $this->request->getVar('payment');
 
-        if ($noRegAkhir->no_reg != null) {
-            $no_urut_reg = substr($noRegAkhir->no_reg, 0, 3);
-            $valNoReg = sprintf('%03s', ($no_urut_reg + 1));
+                    // dd($noRekamMedik, $tanggalKunjungan, $tanggalreg, $poliklinik, $pilihDokter, $payment);
+
+                    $valNoReg = '';
+                    $noRegAkhir = $this->ModelRegistrasiAntrianPasien->getLastNoRegWhereDokterAndTglReg($pilihDokter, $tanggalKunjungan);
+
+                    if ($noRegAkhir->no_reg != null) {
+                        $no_urut_reg = substr($noRegAkhir->no_reg, 0, 3);
+                        $valNoReg = sprintf('%03s', ($no_urut_reg + 1));
+                    } else {
+                        $valNoReg = '001';
+                    }
+
+                    $valNoRawat = '';
+                    $noRawatAkhir = $this->ModelRegistrasiAntrianPasien->getLastNoRawatWhereTglReg($tanggalKunjungan);
+
+                    if ($noRawatAkhir->no_rawat != null) {
+                        $no_urut_rawat = substr($noRawatAkhir->no_rawat, 11, 6);
+                        $valNoRawat = $tanggalreg . '/' . sprintf('%06s', ($no_urut_rawat + 1));
+                    } else {
+                        $valNoRawat = $tanggalreg . '/' . '000001';
+                    }
+
+                    $nmKeluarga = $this->ModelPasien->getPasienWhereNoRkmMedis($noRekamMedik);
+                    $biayaReg = $this->ModelPoliklinik->getPoliWhereKdpoli($poliklinik);
+
+                    //menentukan umur sekarang
+                    list($cY, $cm, $cd) = explode('-', date('Y-m-d'));
+                    list($Y, $m, $d) = explode('-', date('Y-m-d', strtotime($nmKeluarga->tgl_lahir)));
+                    $umurdaftar = $cY - $Y;
+
+                    $this->ModelRegistrasiAntrianPasien->save([
+                        'no_rawat' => $valNoRawat,
+                        'no_reg' => $valNoReg,
+                        'tgl_registrasi' => $tanggalKunjungan,
+                        'jam_reg' => date('H:i:s'),
+                        'kd_dokter' => $pilihDokter,
+                        'no_rkm_medis' => $noRekamMedik,
+                        'kd_poli' => $poliklinik,
+                        'p_jawab' => $nmKeluarga->namakeluarga,
+                        'almt_pj' => $nmKeluarga->alamat,
+                        'hubunganpj' => $nmKeluarga->keluarga,
+                        'biaya_reg' => $biayaReg->registrasilama,
+                        'stts' => 'Belum',
+                        'stts_daftar' => 'Lama',
+                        'status_lanjut' => 'Ralan',
+                        'kd_pj' => $payment,
+                        'umurdaftar' => $umurdaftar,
+                        'sttsumur' => 'Th',
+                        'status_bayar' => 'Belum Bayar',
+                    ]);
+
+                    session()->setFlashdata('success', 'Berhasil daftar antrian.');
+                    return redirect()->to('/antrianSekarang')->withInput();
+                } else {
+                    return redirect()->back()->with('error', 'Anda sudah daftar antrian pada tanggal ' . date_format(date_create($tanggalKunjungan), 'd-M-Y') . '.');
+                }
+            } else {
+                return redirect()->back()->with('error', 'Pendaftaran antrian online harus 1 hari / lebih sebelum periksa.');
+            }
         } else {
-            $valNoReg = '001';
+            return redirect()->back()->with('error', 'Gagal daftar antrian | B001. Silahkan hubungi kontak yang tersedia!');
         }
-
-        $valNoRawat = '';
-        $noRawatAkhir = $this->ModelRegistrasiAntrianPasien->getLastNoRawatWhereTglReg($tanggalKunjungan);
-
-        if ($noRawatAkhir->no_rawat != null) {
-            $no_urut_rawat = substr($noRawatAkhir->no_rawat, 11, 6);
-            $valNoRawat = $tanggalreg . '/' . sprintf('%06s', ($no_urut_rawat + 1));
-        } else {
-            $valNoRawat = $tanggalreg . '/' . '000001';
-        }
-
-        $nmKeluarga = $this->ModelPasien->getPasienWhereNoRkmMedis($noRekamMedik);
-        $biayaReg = $this->ModelPoliklinik->getPoliWhereKdpoli($poliklinik);
-
-        //menentukan umur sekarang
-        list($cY, $cm, $cd) = explode('-', date('Y-m-d'));
-        list($Y, $m, $d) = explode('-', date('Y-m-d', strtotime($nmKeluarga->tgl_lahir)));
-        $umurdaftar = $cY - $Y;
-
-        $this->ModelRegistrasiAntrianPasien->save([
-            'no_rawat' => $valNoRawat,
-            'no_reg' => $valNoReg,
-            'tgl_registrasi' => $tanggalKunjungan,
-            'jam_reg' => date('H:i:s'),
-            'kd_dokter' => $pilihDokter,
-            'no_rkm_medis' => $noRekamMedik,
-            'kd_poli' => $poliklinik,
-            'p_jawab' => $nmKeluarga->namakeluarga,
-            'almt_pj' => $nmKeluarga->alamat,
-            'hubunganpj' => $nmKeluarga->keluarga,
-            'biaya_reg' => $biayaReg->registrasilama,
-            'stts' => 'Belum',
-            'stts_daftar' => 'Lama',
-            'status_lanjut' => 'Ralan',
-            'kd_pj' => $payment,
-            'umurdaftar' => $umurdaftar,
-            'sttsumur' => 'Th',
-            'status_bayar' => 'Belum Bayar',
-        ]);
-
-        session()->setFlashdata('success', 'Berhasil daftar antrian.');
-        return redirect()->to('/antrianSekarang')->withInput();
     }
 
     public function antrianSekarang()
     {
         $userId = session('id_user');
         $user = $this->ModelPasien->getPasienWhereNoRkmMedis($userId);
-        $dateToday = strtotime(date('Y-d-m'));
+        $today = strtotime($this->today);
         $lastAntrian = $this->ModelRegistrasiAntrianPasien->getLastAntrian($userId);
 
         $data = [
             'user' => $user,
-            'dateToday' => $dateToday,
+            'today' => $today,
             'lastAntrian' => $lastAntrian
         ];
         // dd($data);
