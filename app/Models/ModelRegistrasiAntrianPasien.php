@@ -29,7 +29,7 @@ class ModelRegistrasiAntrianPasien extends Model
 
     public function getLastAntrian($userId = false)
     {
-        return $this->select('nm_pasien, reg_periksa.no_rkm_medis, tgl_registrasi, jam_reg, no_rawat, no_reg, nm_poli, nm_dokter, status_lanjut, png_jawab')
+        return $this->select('nm_pasien, reg_periksa.no_rkm_medis, tgl_registrasi, jam_reg, no_rawat, no_reg, nm_poli, nm_dokter, status_lanjut, png_jawab, status_bayar')
             ->join('poliklinik plk', 'reg_periksa.kd_poli = plk.kd_poli')
             ->join('dokter dktr', 'dktr.kd_dokter = reg_periksa.kd_dokter')
             ->join('penjab pnj', 'pnj.kd_pj = reg_periksa.kd_pj')
