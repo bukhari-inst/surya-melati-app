@@ -24,6 +24,9 @@
 <!-- Appointment Start -->
 <div class="container-fluid py-5 wow fadeIn" data-wow-delay="0.1s">
     <div class="container">
+        <?php $tgl = strtotime($lastAntrian->tgl_registrasi); ?>
+        <?php if ($tgl >= $today) : ?>
+
         <div class="row g-5">
             <div class="col-lg-6 wow fadeIn" data-wow-delay="0.3s">
                 <h1 class="display-6 mb-5">
@@ -80,6 +83,12 @@
                 </div>
             </div>
         </div>
+
+        <?php else : ?>
+        <div class="alert alert-danger text-center" role="alert">
+            Tidak ada antrian untuk anda!
+        </div>
+        <?php endif; ?>
     </div>
 </div>
 <!-- Appointment End -->
