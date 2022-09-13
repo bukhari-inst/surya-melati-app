@@ -80,6 +80,13 @@
                             <span class="fw-bold">Cara Bayar: </span> <br> <?= $lastAntrian->png_jawab ?>
                         </li>
                     </ul>
+                    <div class="col-12 mt-4">
+                        <div class="d-grid">
+                            <button class="btn btn-primary py-3" type="submit">
+                                Ganti tanggal antrian? <i class="fas fa-minus-circle fa-lg"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
