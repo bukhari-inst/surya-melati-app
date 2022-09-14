@@ -43,6 +43,8 @@ $routes->add('/getPoliklinik', 'Users::getPoliklinik');
 $routes->add('/getDokter', 'Users::getDokter');
 $routes->post('/registrasiAntrian', 'Users::registrasiAntrian');
 $routes->get('/antrianSekarang', 'Users::antrianSekarang');
+$routes->post('/gantiTanggalAntrian', 'Users::gantiTanggalAntrian');
+$routes->post('/batalTanggalAntrian', 'Users::batalTanggalAntrian');
 
 /*
  * --------------------------------------------------------------------
