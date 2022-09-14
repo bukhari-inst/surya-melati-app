@@ -234,7 +234,7 @@ class Users extends BaseController
         $userId = session('id_user');
         $user = $this->ModelPasien->getPasienWhereNoRkmMedis($userId);
         $today = strtotime($this->today);
-        $lastAntrian = $this->ModelRegistrasiAntrianPasien->getLastAntrian($userId);
+        $lastAntrian = $this->ModelRegistrasiAntrianPasien->getLastAntrianSttsBelum($userId);
 
         $data = [
             'user' => $user,
@@ -244,5 +244,32 @@ class Users extends BaseController
         // dd($data);
 
         return view('pages/users/antrian_sekarang', $data);
+    }
+
+    public function gantiTanggalAntrian()
+    {
+        $lastAntrian = $this->ModelRegistrasiAntrianPasien->getLastAntrian(session('id_user'));
+
+        if (time() < strtotime('12:01 am ' . date($lastAntrian->tgl_registrasi))) {
+            $this->ModelRegistrasiAntrianPasien->save([
+                'no_rawat' => $lastAntrian->no_rawat,
+                'stts' => 'Batal',
+            ]);
+
+            return redirect()->to('/')->with('success', 'Antrian anda sebelumnya berhasil dibatalkan, Silahkan daftar antrian kembali.');
+        } else {
+            return redirect()->to('/')->with('error', 'Gagal ganti tanggal antrian! anda sudah melebihi batas waktu. Atau batalkan antrian anda sekarang, dan daftar antrian kembali selain tanggal besok.');
+        }
+    }
+
+    public function batalTanggalAntrian()
+    {
+        $lastAntrian = $this->ModelRegistrasiAntrianPasien->getLastAntrian(session('id_user'));
+        $this->ModelRegistrasiAntrianPasien->save([
+            'no_rawat' => $lastAntrian->no_rawat,
+            'stts' => 'Batal',
+        ]);
+
+        return redirect()->to('/')->with('success', 'Antrian anda berhasil dibatalkan.');
     }
 }
