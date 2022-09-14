@@ -33,7 +33,7 @@
                     Terima Kasih Atas kepercayaan Anda.
                 </h1>
                 <p class="mb-5">
-                    Bawalah kartu Berobat anda dan datang 1 jam sebelumnya. <br>
+                    Bawalah kartu Berobat anda dan datang 30 menit sebelumnya. <br>
                     Jika memilih cara bayar BPJS, bawalah surat rujukan atau surat kontrol asli dan tunjukkan pada
                     petugas di Lobby resepsionis.
                 </p>
