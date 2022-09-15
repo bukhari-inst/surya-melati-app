@@ -286,4 +286,13 @@ class Users extends BaseController
 
         return view('pages/users/riwayat_periksa', $data);
     }
+
+    public function informasiKamar()
+    {
+        $data = [
+            'user' => session('username'),
+        ];
+
+        return view('pages/users/informasi_kamar', $data);
+    }
 }
