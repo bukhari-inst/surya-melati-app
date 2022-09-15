@@ -8,6 +8,8 @@
 <script src="<?= base_url(); ?>/assets/lib/counterup/counterup.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js" type="text/javascript">
 </script>
+<script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+<script src="<?= base_url(); ?>/assets/js/datatables-simple-demo.js"></script>
 <script>
 // select poliklinik
 function getFieldDataPoliklinik() {

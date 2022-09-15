@@ -15,13 +15,12 @@ class Home extends BaseController
 
     public function index()
     {
-        $userId = session('id_user');
-        $user = $this->ModelPasien->getPasienWhereNoRkmMedis($userId);
         $payment = $this->ModelCaraBayar->getSpecificPay();
 
         $data = [
             'validation' => \Config\Services::validation(),
-            'user' => $user,
+            'user' => session('username'),
+            'user_id' => session('user_id'),
             'payment' => $payment,
         ];
 

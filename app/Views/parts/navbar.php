@@ -14,7 +14,7 @@
                 class="nav-item nav-link <?= uri_string() == '/' ? 'active' : '' ?>">Pendaftaran</a>
             <div class="nav-item dropdown">
                 <a href="<?= base_url('/riwayatPeriksa'); ?>"
-                    class="nav-link dropdown-toggle <?= uri_string() == 'antrianSekarang' ? 'active' : '' ?>"
+                    class="nav-link dropdown-toggle <?= uri_string() == 'antrianSekarang' || uri_string() == 'riwayatPeriksa' ? 'active' : '' ?>"
                     data-bs-toggle="dropdown">Riwayat
                     Periksa</a>
                 <div class="dropdown-menu bg-light border-0 m-0">
@@ -36,7 +36,7 @@
                 </a>
                 <div class="dropdown-menu bg-light border-0 m-0">
                     <a href="#" class="dropdown-item">
-                        <?php $string = $user->nm_pasien ?>
+                        <?php $string = $user ?>
                         <?= $string = character_limiter($string, 15); ?>
                     </a>
                     <a href="<?= base_url('/logout'); ?>" class="dropdown-item">Logout

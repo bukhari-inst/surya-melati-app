@@ -30,7 +30,7 @@ class Users extends BaseController
 
     public function login()
     {
-        if (session('id_user')) {
+        if (session('user_id')) {
             return redirect()->to(site_url('/'));
         }
 
@@ -45,7 +45,10 @@ class Users extends BaseController
 
         if ($user) {
             if ($date == $user->tgl_lahir) {
-                $params = ['id_user' => $user->no_rkm_medis];
+                $params = [
+                    'user_id' => $user->no_rkm_medis,
+                    'username' => $user->nm_pasien,
+                ];
                 session()->set($params);
                 return redirect()->to(site_url('/'));
             } else {
@@ -58,7 +61,7 @@ class Users extends BaseController
 
     public function logout()
     {
-        session()->remove('id_user');
+        session()->remove('user_id', 'username');
         return redirect()->to(site_url('/login'));
     }
 
@@ -117,7 +120,7 @@ class Users extends BaseController
         $today = strtotime($this->today);
         $tanggalKunjungan = $this->request->getVar('tanggalkunjungan');
         $valTanggalKunjungan = strtotime($tanggalKunjungan);
-        $lastAntrian = $this->ModelRegistrasiAntrianPasien->getLastAntrian(session('id_user'));
+        $lastAntrian = $this->ModelRegistrasiAntrianPasien->getLastAntrian(session('user_id'));
         $lastTglAntrian = strtotime($lastAntrian->tgl_registrasi);
 
         // dd($lastAntrian->status_bayar);
@@ -231,13 +234,11 @@ class Users extends BaseController
 
     public function antrianSekarang()
     {
-        $userId = session('id_user');
-        $user = $this->ModelPasien->getPasienWhereNoRkmMedis($userId);
         $today = strtotime($this->today);
-        $lastAntrian = $this->ModelRegistrasiAntrianPasien->getLastAntrianSttsBelum($userId);
+        $lastAntrian = $this->ModelRegistrasiAntrianPasien->getLastAntrianSttsBelum(session('user_id'));
 
         $data = [
-            'user' => $user,
+            'user' => session('username'),
             'today' => $today,
             'lastAntrian' => $lastAntrian
         ];
@@ -248,7 +249,7 @@ class Users extends BaseController
 
     public function gantiTanggalAntrian()
     {
-        $lastAntrian = $this->ModelRegistrasiAntrianPasien->getLastAntrian(session('id_user'));
+        $lastAntrian = $this->ModelRegistrasiAntrianPasien->getLastAntrian(session('user_id'));
 
         if (time() < strtotime('12:01 am ' . date($lastAntrian->tgl_registrasi))) {
             $this->ModelRegistrasiAntrianPasien->save([
@@ -264,12 +265,25 @@ class Users extends BaseController
 
     public function batalTanggalAntrian()
     {
-        $lastAntrian = $this->ModelRegistrasiAntrianPasien->getLastAntrian(session('id_user'));
+        $lastAntrian = $this->ModelRegistrasiAntrianPasien->getLastAntrian(session('user_id'));
         $this->ModelRegistrasiAntrianPasien->save([
             'no_rawat' => $lastAntrian->no_rawat,
             'stts' => 'Batal',
         ]);
 
         return redirect()->to('/')->with('success', 'Antrian anda berhasil dibatalkan.');
+    }
+
+    public function riwayatPeriksa()
+    {
+
+        $historyAntrian = $this->ModelRegistrasiAntrianPasien->getHistoryAntrian(session('user_id'));
+
+        $data = [
+            'user' => session('username'),
+            'historyAntrian' => $historyAntrian,
+        ];
+
+        return view('pages/users/riwayat_periksa', $data);
     }
 }

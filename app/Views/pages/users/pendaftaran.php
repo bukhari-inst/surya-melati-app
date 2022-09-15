@@ -92,14 +92,14 @@
                                 <div class="form-floating">
                                     <input type="text" class="form-control" id="gname" placeholder="Gurdian Name" name="namapasien" readonly />
                                     <label for="gname">
-                                        <?php $string = $user->nm_pasien ?>
+                                        <?php $string = $user ?>
                                         <?= $string = character_limiter($string, 15); ?>
                                     </label>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control text-center" id="rekammedik" placeholder="Gurdian Email" value="<?= $user->no_rkm_medis ?>" name="norekammedik" readonly style="padding-bottom: 1.625rem;" />
+                                    <input type="text" class="form-control text-center" id="rekammedik" placeholder="Gurdian Email" value="<?= $user_id ?>" name="norekammedik" readonly style="padding-bottom: 1.625rem;" />
                                 </div>
                             </div>
                             <div class="col-sm-6">
