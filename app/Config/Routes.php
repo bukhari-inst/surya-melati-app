@@ -46,6 +46,7 @@ $routes->get('/antrianSekarang', 'Users::antrianSekarang');
 $routes->get('/gantiTanggalAntrian', 'Users::gantiTanggalAntrian');
 $routes->get('/batalTanggalAntrian', 'Users::batalTanggalAntrian');
 $routes->get('/riwayatPeriksa', 'Users::riwayatPeriksa');
+$routes->get('/informasiKamar', 'Users::informasiKamar');
 
 /*
  * --------------------------------------------------------------------
