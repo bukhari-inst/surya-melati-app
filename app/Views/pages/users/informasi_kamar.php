@@ -21,64 +21,169 @@
 </div>
 <!-- Page Header End -->
 
-<!-- Service Start -->
+<!-- Team Start -->
 <div class="container-xxl py-5">
     <div class="container">
         <div class="text-center mx-auto" style="max-width: 500px">
-            <h1 class="display-6 mb-5">
-                Informasi kamar
-            </h1>
+            <h1 class="display-6 mb-5">Informasi Daftar Kamar</h1>
         </div>
-        <div class="row g-4 justify-content-center">
-            <div class="col-lg-12 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="service-item rounded h-100 p-5">
-                    <div class="d-flex align-items-center ms-n5 mb-4">
-                        <div class="service-icon flex-shrink-0 bg-primary rounded-end me-4">
-                            <img class="img-fluid" src="<?= base_url(); ?>/assets/img/icon/icon-10-light.png" alt="" />
-                        </div>
-                        <h4 class="mb-0">Daftar kamar</h4>
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="team-item rounded">
+                    <img class="img-fluid" src="<?= base_url(); ?>/assets/img/hcu.png" alt="" />
+                    <div class="text-center p-4">
+                        <h5>Full Name</h5>
+                        <span>Designation</span>
                     </div>
-                    <div class="table-responsive">
-                        <table id="datatablesSimple" class="table table-striped table-hover">
-                            <thead>
-                                <tr>
-                                    <th scope="col">No</th>
-                                    <th scope="col">Nama Kamar</th>
-                                    <th scope="col">Jumlah Bed</th>
-                                    <th scope="col">Bed Terisi</th>
-                                    <th scope="col">Bed Kosong</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                //$i = 1;
-                                ?>
-                                <?php
-                                // foreach ($historyAntrian as $history) : 
-                                ?>
-                                <tr>
-                                    <th scope="row">
-                                        <?php
-                                        //$i++; 
-                                        ?>
-                                    </th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <?php
-                                // endforeach 
-                                ?>
-                            </tbody>
-                        </table>
+                    <div class="team-text text-center bg-white p-4">
+                        <h5>Full Name</h5>
+                        <p>Designation</p>
+                        <div class="d-flex justify-content-center">
+                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="team-item rounded">
+                    <img class="img-fluid" src="<?= base_url(); ?>/assets/img/madinah.png" alt="" />
+                    <div class="text-center p-4">
+                        <h5>Full Name</h5>
+                        <span>Designation</span>
+                    </div>
+                    <div class="team-text text-center bg-white p-4">
+                        <h5>Full Name</h5>
+                        <p>Designation</p>
+                        <div class="d-flex justify-content-center">
+                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="team-item rounded">
+                    <img class="img-fluid" src="<?= base_url(); ?>/assets/img/arofah.png" alt="" />
+                    <div class="text-center p-4">
+                        <h5>Full Name</h5>
+                        <span>Designation</span>
+                    </div>
+                    <div class="team-text text-center bg-white p-4">
+                        <h5>Full Name</h5>
+                        <p>Designation</p>
+                        <div class="d-flex justify-content-center">
+                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="team-item rounded">
+                    <img class="img-fluid" src="<?= base_url(); ?>/assets/img/hcu.png" alt="" />
+                    <div class="text-center p-4">
+                        <h5>Full Name</h5>
+                        <span>Designation</span>
+                    </div>
+                    <div class="team-text text-center bg-white p-4">
+                        <h5>Full Name</h5>
+                        <p>Designation</p>
+                        <div class="d-flex justify-content-center">
+                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="team-item rounded">
+                    <img class="img-fluid" src="<?= base_url(); ?>/assets/img/hcu.png" alt="" />
+                    <div class="text-center p-4">
+                        <h5>Full Name</h5>
+                        <span>Designation</span>
+                    </div>
+                    <div class="team-text text-center bg-white p-4">
+                        <h5>Full Name</h5>
+                        <p>Designation</p>
+                        <div class="d-flex justify-content-center">
+                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="team-item rounded">
+                    <img class="img-fluid" src="<?= base_url(); ?>/assets/img/madinah.png" alt="" />
+                    <div class="text-center p-4">
+                        <h5>Full Name</h5>
+                        <span>Designation</span>
+                    </div>
+                    <div class="team-text text-center bg-white p-4">
+                        <h5>Full Name</h5>
+                        <p>Designation</p>
+                        <div class="d-flex justify-content-center">
+                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="team-item rounded">
+                    <img class="img-fluid" src="<?= base_url(); ?>/assets/img/arofah.png" alt="" />
+                    <div class="text-center p-4">
+                        <h5>Full Name</h5>
+                        <span>Designation</span>
+                    </div>
+                    <div class="team-text text-center bg-white p-4">
+                        <h5>Full Name</h5>
+                        <p>Designation</p>
+                        <div class="d-flex justify-content-center">
+                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="team-item rounded">
+                    <img class="img-fluid" src="<?= base_url(); ?>/assets/img/hcu.png" alt="" />
+                    <div class="text-center p-4">
+                        <h5>Full Name</h5>
+                        <span>Designation</span>
+                    </div>
+                    <div class="team-text text-center bg-white p-4">
+                        <h5>Full Name</h5>
+                        <p>Designation</p>
+                        <div class="d-flex justify-content-center">
+                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- Service End -->
+<!-- Team End -->
 
 <?= $this->include('parts/footer'); ?>
 
