@@ -10,8 +10,7 @@
         <h1 class="display-4 animated slideInDown mb-4">Riwayat Periksa</h1>
         <nav aria-label="breadcrumb animated slideInDown">
             <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item"><a href="#">Riwayat periksa</a></li>
+                <li class="breadcrumb-item"><a href="<?= base_url('/'); ?>">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">
                     Riwayat periksa
                 </li>
@@ -21,7 +20,7 @@
 </div>
 <!-- Page Header End -->
 
-<!-- Service Start -->
+<!-- Riwayat Periksa Start -->
 <div class="container-xxl py-5">
     <div class="container">
         <div class="text-center mx-auto" style="max-width: 500px">
@@ -72,7 +71,7 @@
         </div>
     </div>
 </div>
-<!-- Service End -->
+<!-- Riwayat Periksa End -->
 
 <?= $this->include('parts/footer'); ?>
 

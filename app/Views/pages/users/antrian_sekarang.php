@@ -10,8 +10,7 @@
         <h1 class="display-4 animated slideInDown mb-4">Antrian sekarang</h1>
         <nav aria-label="breadcrumb animated slideInDown">
             <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item"><a href="#">Riwayat periksa</a></li>
+                <li class="breadcrumb-item"><a href="<?= base_url('/'); ?>">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">
                     Antrian sekarang
                 </li>
@@ -21,7 +20,7 @@
 </div>
 <!-- Page Header End -->
 
-<!-- Appointment Start -->
+<!-- Antrian Sekarang Start -->
 <div class="container-fluid py-5 wow fadeIn" data-wow-delay="0.1s">
     <div class="container">
         <?php $tgl = strtotime($lastAntrian->tgl_registrasi); ?>
@@ -110,7 +109,7 @@
         <?php endif; ?>
     </div>
 </div>
-<!-- Appointment End -->
+<!-- Antrian Sekarang End -->
 
 <!-- Modal ganti antrian -->
 <div class="modal fade" id="gantiAntrian" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

@@ -10,8 +10,7 @@
         <h1 class="display-4 animated slideInDown mb-4">Informasi Kamar</h1>
         <nav aria-label="breadcrumb animated slideInDown">
             <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item"><a href="#">Informasi Kamar</a></li>
+                <li class="breadcrumb-item"><a href="<?= base_url('/'); ?>">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">
                     Informasi Kamar
                 </li>
@@ -21,7 +20,7 @@
 </div>
 <!-- Page Header End -->
 
-<!-- Team Start -->
+<!-- Informasi Kamar Start -->
 <div class="container-xxl py-5">
     <div class="container">
         <div class="text-center mx-auto" style="max-width: 500px">
@@ -183,7 +182,7 @@
         </div>
     </div>
 </div>
-<!-- Team End -->
+<!-- Informasi Kamar End -->
 
 <?= $this->include('parts/footer'); ?>
 
