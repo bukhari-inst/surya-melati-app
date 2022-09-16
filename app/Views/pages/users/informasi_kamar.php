@@ -26,7 +26,27 @@
         <div class="text-center mx-auto" style="max-width: 500px">
             <h1 class="display-6 mb-5">Informasi Daftar Kamar</h1>
         </div>
-        <div class="row g-4">
+        <div class="d-none d-lg-block">
+            <div class="d-flex justify-content-center mx-3 mb-5">
+                <a href="#" class="btn btn-outline-success mx-3" aria-current="page">Kelas 1</a>
+                <a href="#" class="btn btn-outline-success mx-3">Kelas 2</a>
+                <a href="#" class="btn btn btn-outline-success mx-3">Kelas 3</a>
+                <a href="#" class="btn btn-outline-success mx-3" aria-current="page">Kelas Utama</a>
+                <a href="#" class="btn btn-outline-success mx-3">Kelas VIP</a>
+            </div>
+        </div>
+        <div class="d-lg-none">
+            <div class="d-flex justify-content-center mb-3">
+                <a href="#" class="btn btn-outline-success" aria-current="page">Kelas 1</a>
+                <a href="#" class="btn btn-outline-success mx-3">Kelas 2</a>
+                <a href="#" class="btn btn btn-outline-success">Kelas 3</a>
+            </div>
+            <div class="d-flex justify-content-center mb-4">
+                <a href="#" class="btn btn-outline-success me-2" aria-current="page">Kelas Utama</a>
+                <a href="#" class="btn btn-outline-success ms-2">Kelas VIP</a>
+            </div>
+        </div>
+        <div class=" row g-4">
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="team-item rounded">
                     <img class="img-fluid" src="<?= base_url(); ?>/assets/img/hcu.png" alt="" />
