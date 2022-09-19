@@ -72,6 +72,6 @@ class Filters extends BaseConfig
      * @var array
      */
     public $filters = [
-        'isLoggedIn' => ['before' => ['/', 'riwayatPeriksa', 'antrianSekarang', 'jadwalDokter', 'informasiKamar', 'pengaduan']],
+        'isLoggedIn' => ['before' => ['/', 'riwayatPeriksa', 'antrianSekarang', 'jadwalDokter', 'informasiKamar', 'pengaduan', 'perbaruiDataUser']],
     ];
 }

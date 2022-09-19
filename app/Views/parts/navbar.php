@@ -35,7 +35,11 @@
                         <?php $string = $user ?>
                         <?= $string = character_limiter($string, 15); ?>
                     </a>
-                    <a href="<?= base_url('/logout'); ?>" class="dropdown-item">Logout
+                    <a href="<?= base_url('/perbaruiDataUser'); ?>"
+                        class="dropdown-item <?= uri_string() == 'perbaruiDataUser' ? 'active' : '' ?>"">
+                        Perbarui data
+                    </a>
+                    <a href=" <?= base_url('/logout'); ?>" class="dropdown-item">Logout
                         <span style="color: #015fc9;">
                             <i class="fas fa-sign-out-alt"></i>
                         </span>

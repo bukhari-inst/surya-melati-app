@@ -295,4 +295,74 @@ class Users extends BaseController
 
         return view('pages/users/informasi_kamar', $data);
     }
+
+    public function perbaruiDataUser()
+    {
+        $pekerjaan = [
+            'BELUM/TIDAK BEKERJA', 'MENGURUS RUMAH TANGGA',
+            'PELAJAR/MAHASISWA', 'PENSIUNAN', 'PEGAWAI NEGERI SIPIL',
+            'TENTARA NASIONAL INDONESIA', 'KEPOLISIAN RI', 'PERDAGANGAN',
+            'PETANI/PEKEBUN', 'PETERNAK', 'NELAYAN/PERIKANAN', 'INDUSTRI',
+            'KONSTRUKSI', 'TRANSPORTASI', 'KARYAWAN SWASTA', 'KARYAWAN BUMN',
+            'KARYAWAN BUMD', 'KARYAWAN HONORER', 'BURUH HARIAN LEPAS',
+            'BURUH TANI/PERKEBUNAN', 'BURUH NELAYAN/PERIKANAN', 'BURUH PETERNAKAN',
+            'PEMBANTU RUMAH TANGGA', 'TUKANG CUKUR', 'TUKANG LISTRIK', 'TUKANG BATU',
+            'TUKANG KAYU', 'TUKANG SOL SEPATU', 'TUKANG LAS/PANDAI BESI', 'TUKANG JAHIT',
+            'TUKANG GIGI', 'PENATA RIAS', 'PENATA BUSANA', 'PENATA RAMBUT', 'MEKANIK',
+            'SENIMAN', 'TABIB', 'PARAJI', 'PERANCANG BUSANA', 'PENTERJEMAH',
+            'IMAM MASJID', 'PENDETA', 'PASTOR', 'WARTAWAN', 'USTADZ/MUBALIGH',
+            'JURU MASAK', 'PROMOTOR ACARA', 'ANGGOTA DPR-RI', 'ANGGOTA DPD',
+            'ANGGOTA BPK', 'PRESIDEN', 'WAKIL PRESIDEN', 'ANGGOTA MAHKAMAH KONSTITUSI',
+            'ANGGOTA KABINET/KEMENTRIAN', 'DUTA BESAR', 'GUBERNUR', 'WAKIL GUBERNUR',
+            'BUPATI', 'WAKIL BUPATI', 'WALI KOTA', 'WAKIL WALIKOTA',
+            'ANGGOTA DPRD PROVINSI', 'ANGGOTA DPRD KABUPATEN/KOTA',
+            'DOSEN', 'GURU', 'PILOT', 'PENGACARA', 'NOTARIS', 'ARSITEK', 'AKUNTAN',
+            'KONSULTAN', 'KONSULTAN', 'DOKTER', 'BIDAN', 'PERAWAT', 'APOTEKER',
+            'PSIKIATER/PSIKOLOG', 'PENYIAR TELEVISI', 'PENYIAR RADIO', 'PELAUT',
+            'PENELITI', 'SOPIR', 'PIALANG', 'PARANORMAL', 'PEDAGANG', 'PERANGKAT DESA',
+            'KEPALA DESA', 'BIARAWATI', 'WIRASWASTA', 'LAINNYA'
+        ];
+        $pasien = $this->ModelPasien->getPasienWhereNoRkmMedis(session('user_id'));
+
+        $data = [
+            'validation' => \Config\Services::validation(),
+            'user' => session('username'),
+            'pasien' => $pasien,
+            'pekerjaan' => $pekerjaan,
+        ];
+
+        return view('pages/users/perbarui_data_user', $data);
+    }
+
+    public function updateDataUser()
+    {
+        $namaPasien = $this->request->getVar('namaPasien');
+        $nikKtp = $this->request->getVar('nikKtp');
+        $jenisKelamin = $this->request->getVar('jenisKelamin');
+        $agama = $this->request->getVar('agama');
+        $tempatLahir = $this->request->getVar('tempatLahir');
+        $tglLahir = $this->request->getVar('tglLahir');
+        $namaIbu = $this->request->getVar('namaIbu');
+        $alamat = $this->request->getVar('alamat');
+        $golonganDarah = $this->request->getVar('golonganDarah');
+        $pekerjaan = $this->request->getVar('pekerjaan');
+        $statusNikah = $this->request->getVar('statusNikah');
+        $nomorTelepon = $this->request->getVar('nomorTelepon');
+        $pasien = $this->ModelPasien->getPasienWhereNoRkmMedis(session('user_id'));
+
+        if ($namaPasien != $pasien->nm_pasien) {
+            if (!$this->validate([
+                'namaPasien' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => 'Nama lengkap tidak boleh kosong',
+                    ]
+                ],
+            ])) {
+                return redirect()->back()->withInput();
+            }
+        }
+
+        return redirect()->to('/')->with('success', 'Data diri anda berhasil diperbarui.');
+    }
 }

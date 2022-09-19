@@ -77,6 +77,10 @@ $(document).ready(function() {
     $('.js-example-basic-single').select2({
         width: 'resolve'
     });
+
+    $('.select-pekerjaan').select2({
+        width: 'resolve'
+    });
 });
 </script>
 <!-- Template Javascript -->
