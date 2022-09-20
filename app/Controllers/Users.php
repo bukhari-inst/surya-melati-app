@@ -341,7 +341,8 @@ class Users extends BaseController
         $jenisKelamin = $this->request->getVar('jenisKelamin');
         $agama = $this->request->getVar('agama');
         $tempatLahir = $this->request->getVar('tempatLahir');
-        $tglLahir = $this->request->getVar('tglLahir');
+        $valtglLahir = $this->request->getVar('tglLahir');
+        $tglLahir = date_format(date_create($valtglLahir), 'Y-m-d');
         $namaIbu = $this->request->getVar('namaIbu');
         $alamat = $this->request->getVar('alamat');
         $golonganDarah = $this->request->getVar('golonganDarah');
@@ -363,6 +364,165 @@ class Users extends BaseController
             }
         }
 
-        return redirect()->to('/')->with('success', 'Data diri anda berhasil diperbarui.');
+        if ($nikKtp != $pasien->no_ktp) {
+            if (!$this->validate([
+                'nikKtp' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => 'NIK KTP tidak boleh kosong',
+                    ]
+                ],
+            ])) {
+                return redirect()->back()->withInput();
+            }
+        }
+
+        if ($jenisKelamin != $pasien->jk) {
+            if (!$this->validate([
+                'jenisKelamin' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => 'Jenis Kelamin tidak boleh kosong',
+                    ]
+                ],
+            ])) {
+                return redirect()->back()->withInput();
+            }
+        }
+
+        if ($agama != $pasien->agama) {
+            if (!$this->validate([
+                'agama' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => 'Agama tidak boleh kosong',
+                    ]
+                ],
+            ])) {
+                return redirect()->back()->withInput();
+            }
+        }
+
+        if ($tempatLahir != $pasien->tmp_lahir) {
+            if (!$this->validate([
+                'tempatLahir' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => 'Tempat lahir tidak boleh kosong',
+                    ]
+                ],
+            ])) {
+                return redirect()->back()->withInput();
+            }
+        }
+
+        if ($tglLahir != $pasien->tgl_lahir) {
+            if (!$this->validate([
+                'tglLahir' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => 'Tanggal lahir tidak boleh kosong',
+                    ]
+                ],
+            ])) {
+                return redirect()->back()->withInput();
+            }
+        }
+
+        if ($namaIbu != $pasien->nm_ibu) {
+            if (!$this->validate([
+                'namaIbu' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => 'Nama ibu tidak boleh kosong',
+                    ]
+                ],
+            ])) {
+                return redirect()->back()->withInput();
+            }
+        }
+
+        if ($alamat != $pasien->alamat) {
+            if (!$this->validate([
+                'alamat' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => 'Alamat tidak boleh kosong',
+                    ]
+                ],
+            ])) {
+                return redirect()->back()->withInput();
+            }
+        }
+
+        if ($golonganDarah != $pasien->gol_darah) {
+            if (!$this->validate([
+                'golonganDarah' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => 'Golongan darah tidak boleh kosong',
+                    ]
+                ],
+            ])) {
+                return redirect()->back()->withInput();
+            }
+        }
+
+        if ($pekerjaan != $pasien->pekerjaan) {
+            if (!$this->validate([
+                'pekerjaan' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => 'Pekerjaan tidak boleh kosong',
+                    ]
+                ],
+            ])) {
+                return redirect()->back()->withInput();
+            }
+        }
+
+        if ($statusNikah != $pasien->stts_nikah) {
+            if (!$this->validate([
+                'statusNikah' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => 'Status nikah tidak boleh kosong',
+                    ]
+                ],
+            ])) {
+                return redirect()->back()->withInput();
+            }
+        }
+
+        if ($nomorTelepon != $pasien->no_tlp) {
+            if (!$this->validate([
+                'nomorTelepon' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => 'Nomor telepon tidak boleh kosong',
+                    ]
+                ],
+            ])) {
+                return redirect()->back()->withInput();
+            }
+        }
+
+        $this->ModelPasien->save([
+            'no_rkm_medis' => session('user_id'),
+            'nm_pasien' => $namaPasien,
+            'no_ktp' => $nikKtp,
+            'jk' => $jenisKelamin,
+            'agama' => $agama,
+            'tmp_lahir' => $tempatLahir,
+            'tgl_lahir' => $tglLahir,
+            'nm_ibu' => $namaIbu,
+            'alamat' => $alamat,
+            'gol_darah' => $golonganDarah,
+            'pekerjaan' => $pekerjaan,
+            'stts_nikah' => $statusNikah,
+            'no_tlp' => $nomorTelepon,
+        ]);
+
+        return redirect()->to('/perbaruiDataUser')->with('success', 'Data diri anda berhasil diperbarui.');
     }
 }
