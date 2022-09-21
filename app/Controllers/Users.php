@@ -123,7 +123,7 @@ class Users extends BaseController
         $lastAntrian = $this->ModelRegistrasiAntrianPasien->getLastAntrian(session('user_id'));
         $lastTglAntrian = strtotime($lastAntrian->tgl_registrasi);
 
-        // dd($lastAntrian->status_bayar);
+        // dd($lastAntrian);
         if ($lastAntrian->status_bayar != 'Belum Bayar') {
             if ($valTanggalKunjungan != $today && $valTanggalKunjungan > $today) {
                 if ($valTanggalKunjungan != $lastTglAntrian) {
@@ -198,7 +198,7 @@ class Users extends BaseController
                     list($Y, $m, $d) = explode('-', date('Y-m-d', strtotime($nmKeluarga->tgl_lahir)));
                     $umurdaftar = $cY - $Y;
 
-                    $this->ModelRegistrasiAntrianPasien->save([
+                    $this->ModelRegistrasiAntrianPasien->insert([
                         'no_rawat' => $valNoRawat,
                         'no_reg' => $valNoReg,
                         'tgl_registrasi' => $tanggalKunjungan,
