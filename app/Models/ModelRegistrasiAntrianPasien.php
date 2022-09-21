@@ -67,6 +67,8 @@ class ModelRegistrasiAntrianPasien extends Model
             ->join('penjab pnj', 'pnj.kd_pj = reg_periksa.kd_pj')
             ->join('pasien psn', 'psn.no_rkm_medis = reg_periksa.no_rkm_medis')
             ->where('reg_periksa.no_rkm_medis', $userId)
+            ->notLike('reg_periksa.stts', 'Batal')
+            ->groupBy('tgl_registrasi')
             ->orderBy('reg_periksa.tgl_registrasi', 'DESC')
             ->findAll();
     }

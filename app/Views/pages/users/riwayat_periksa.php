@@ -43,11 +43,11 @@
                                 <tr>
                                     <th scope="col">No</th>
                                     <th scope="col">Tanggal</th>
-                                    <th scope="col">No. Rawat</th>
                                     <th scope="col">No. Antrian</th>
                                     <th scope="col">Poliklinik</th>
                                     <th scope="col">Dokter</th>
-                                    <th scope="col">Status rawat</th>
+                                    <th scope="col">Jenis rawat</th>
+                                    <th scope="col">Status</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -56,11 +56,17 @@
                                 <tr>
                                     <th scope="row"><?= $i++; ?></th>
                                     <td><?= $history->tgl_registrasi ?></td>
-                                    <td><?= $history->no_rawat ?></td>
                                     <td><?= $history->no_reg ?></td>
                                     <td><?= $history->nm_poli ?></td>
                                     <td><?= $history->nm_dokter ?></td>
                                     <td><?= $history->status_lanjut ?></td>
+                                    <td>
+                                        <?php if ($history->status_bayar == 'Belum Bayar') : ?>
+                                        <?= 'Proses' ?>
+                                        <?php else : ?>
+                                        <?= 'Selesai' ?>
+                                        <?php endif ?>
+                                    </td>
                                 </tr>
                                 <?php endforeach ?>
                             </tbody>
