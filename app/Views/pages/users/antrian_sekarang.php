@@ -8,7 +8,7 @@
 <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
     <div class="container py-5">
         <h1 class="display-4 animated slideInDown mb-4">Antrian sekarang</h1>
-        <nav aria-label="breadcrumb animated slideInDown">
+        <nav aria-label="breadcrumb animated slideInDown mb-4">
             <ol class="breadcrumb mb-0">
                 <li class="breadcrumb-item"><a href="<?= base_url('/'); ?>">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">
@@ -16,6 +16,20 @@
                 </li>
             </ol>
         </nav>
+        <div class="row">
+            <div class="col-12">
+                <?php if (session()->getFlashdata('success')) : ?>
+                <div class="text-center alert alert-success" role="alert">
+                    <?= session()->getFlashdata('success') ?>
+                </div>
+                <?php endif; ?>
+                <?php if (session()->getFlashdata('error')) : ?>
+                <div class="text-center alert alert-danger" role="alert">
+                    <?= session()->getFlashdata('error') ?>
+                </div>
+                <?php endif; ?>
+            </div>
+        </div>
     </div>
 </div>
 <!-- Page Header End -->

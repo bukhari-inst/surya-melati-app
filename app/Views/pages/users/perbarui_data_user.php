@@ -195,6 +195,7 @@
                                         <option value="AB">AB</option>
                                         <option value="B">B</option>
                                         <option value="O">O</option>
+                                        <option value="-">-</option>
                                     </select>
                                     <label for="cage">Golongan Darah</label>
                                 </div>

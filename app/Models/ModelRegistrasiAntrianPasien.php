@@ -12,7 +12,10 @@ class ModelRegistrasiAntrianPasien extends Model
     protected $returnType = 'object';
 
     protected $allowedFields = [
-        'no_rawat', 'no_reg', 'tgl_registrasi', 'jam_reg', 'kd_dokter', 'no_rkm_medis', 'kd_poli', 'almt_pj', 'hubunganpj', 'biaya_reg', 'stts', 'stts_daftar', 'status_lanjut', 'kd_pj', 'umurdaftar', 'sttsumur', 'status_bayar'
+        'no_rawat', 'no_reg', 'tgl_registrasi', 'jam_reg',
+        'kd_dokter', 'no_rkm_medis', 'kd_poli', 'almt_pj',
+        'hubunganpj', 'biaya_reg', 'stts', 'stts_daftar',
+        'status_lanjut', 'kd_pj', 'umurdaftar', 'sttsumur', 'status_bayar'
     ];
 
     public function getLastNoRegWhereDokterAndTglReg($dokter = false, $tanggalRreg = false)
