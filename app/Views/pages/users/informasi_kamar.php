@@ -28,40 +28,40 @@
         </div>
         <div class="d-none d-lg-block">
             <div class="d-flex justify-content-center mx-3 mb-5">
-                <a href="#" class="btn btn-outline-success mx-3" aria-current="page">Kelas 1</a>
-                <a href="#" class="btn btn-outline-success mx-3">Kelas 2</a>
-                <a href="#" class="btn btn btn-outline-success mx-3">Kelas 3</a>
-                <a href="#" class="btn btn-outline-success mx-3" aria-current="page">Kelas Utama</a>
-                <a href="#" class="btn btn-outline-success mx-3">Kelas VIP</a>
+                <a href="#" class="btn btn-outline-dark mx-3" aria-current="page">Kelas 1</a>
+                <a href="#" class="btn btn-outline-dark mx-3">Kelas 2</a>
+                <a href="#" class="btn btn btn-outline-dark mx-3">Kelas 3</a>
+                <a href="#" class="btn btn-outline-dark mx-3" aria-current="page">Kelas Utama</a>
+                <a href="#" class="btn btn-outline-dark mx-3">Kelas VIP</a>
             </div>
         </div>
         <div class="d-lg-none">
             <div class="d-flex justify-content-center mb-3">
-                <a href="#" class="btn btn-outline-success" aria-current="page">Kelas 1</a>
-                <a href="#" class="btn btn-outline-success mx-3">Kelas 2</a>
-                <a href="#" class="btn btn btn-outline-success">Kelas 3</a>
+                <a href="#" class="btn btn-outline-dark" aria-current="page">Kelas 1</a>
+                <a href="#" class="btn btn-outline-dark mx-3">Kelas 2</a>
+                <a href="#" class="btn btn btn-outline-dark">Kelas 3</a>
             </div>
             <div class="d-flex justify-content-center mb-4">
-                <a href="#" class="btn btn-outline-success me-2" aria-current="page">Kelas Utama</a>
-                <a href="#" class="btn btn-outline-success ms-2">Kelas VIP</a>
+                <a href="#" class="btn btn-outline-dark me-2" aria-current="page">Kelas Utama</a>
+                <a href="#" class="btn btn-outline-dark ms-2">Kelas VIP</a>
             </div>
         </div>
         <div class=" row g-4">
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="team-item rounded">
-                    <img class="img-fluid" src="<?= base_url(); ?>/assets/img/hcu.png" alt="" />
+                    <img class="img-fluid" src="<?= base_url(); ?>/assets/img/madinah.png" alt="" />
                     <div class="text-center p-4">
-                        <h5>Full Name</h5>
-                        <span>Designation</span>
+                        <h5>Madinah 1</h5>
+                        <span>Berisi 2 Bed</span>
                     </div>
                     <div class="team-text text-center bg-white p-4">
-                        <h5>Full Name</h5>
-                        <p>Designation</p>
-                        <div class="d-flex justify-content-center">
-                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-youtube"></i></a>
-                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                        <h5  class="fw-bold">MADINAH 1</h5>
+                        <div class="list-group">
+                            <p class="badge bg-info text-dark" class="fw-bold">Informasi Bed</p>
+                            <p>Terisi 2 Bed</p>
+                            <p>Tersisa 0 Bed</p>
+                            <p class="badge bg-info text-dark" class="fw-bold">Harga</p>
+                            <p>Rp. 400.000 / Hari</p>
                         </div>
                     </div>
                 </div>
@@ -70,17 +70,36 @@
                 <div class="team-item rounded">
                     <img class="img-fluid" src="<?= base_url(); ?>/assets/img/madinah.png" alt="" />
                     <div class="text-center p-4">
-                        <h5>Full Name</h5>
-                        <span>Designation</span>
+                        <h5>Madinah 2</h5>
+                        <span>Berisi 1 Bed</span>
                     </div>
                     <div class="team-text text-center bg-white p-4">
-                        <h5>Full Name</h5>
-                        <p>Designation</p>
-                        <div class="d-flex justify-content-center">
-                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-youtube"></i></a>
-                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                        <h5  class="fw-bold">MADINAH 1</h5>
+                        <div class="list-group">
+                            <p class="badge bg-info text-dark" class="fw-bold">Informasi Bed</p>
+                            <p>Terisi 1 Bed</p>
+                            <p>Tersisa 0 Bed</p>
+                            <p class="badge bg-info text-dark" class="fw-bold">Harga</p>
+                            <p>Rp. 450.000 / Hari</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="team-item rounded">
+                    <img class="img-fluid" src="<?= base_url(); ?>/assets/img/hcu.png" alt="" />
+                    <div class="text-center p-4">
+                        <h5>HCU</h5>
+                        <span>Berisi 4 Bed</span>
+                    </div>
+                    <div class="team-text text-center bg-white p-4">
+                        <h5  class="fw-bold">HCU</h5>
+                        <div class="list-group">
+                            <p class="badge bg-info text-dark" class="fw-bold">Informasi Bed</p>
+                            <p>Terisi 1 Bed</p>
+                            <p>Tersisa 3 Bed</p>
+                            <p class="badge bg-info text-dark" class="fw-bold">Harga</p>
+                            <p>Rp. 300.000 / Hari</p>
                         </div>
                     </div>
                 </div>
@@ -89,74 +108,17 @@
                 <div class="team-item rounded">
                     <img class="img-fluid" src="<?= base_url(); ?>/assets/img/arofah.png" alt="" />
                     <div class="text-center p-4">
-                        <h5>Full Name</h5>
-                        <span>Designation</span>
+                        <h5>Arofah Utara</h5>
+                        <span>Berisi 6 Bed</span>
                     </div>
                     <div class="team-text text-center bg-white p-4">
-                        <h5>Full Name</h5>
-                        <p>Designation</p>
-                        <div class="d-flex justify-content-center">
-                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-youtube"></i></a>
-                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="team-item rounded">
-                    <img class="img-fluid" src="<?= base_url(); ?>/assets/img/hcu.png" alt="" />
-                    <div class="text-center p-4">
-                        <h5>Full Name</h5>
-                        <span>Designation</span>
-                    </div>
-                    <div class="team-text text-center bg-white p-4">
-                        <h5>Full Name</h5>
-                        <p>Designation</p>
-                        <div class="d-flex justify-content-center">
-                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-youtube"></i></a>
-                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="team-item rounded">
-                    <img class="img-fluid" src="<?= base_url(); ?>/assets/img/hcu.png" alt="" />
-                    <div class="text-center p-4">
-                        <h5>Full Name</h5>
-                        <span>Designation</span>
-                    </div>
-                    <div class="team-text text-center bg-white p-4">
-                        <h5>Full Name</h5>
-                        <p>Designation</p>
-                        <div class="d-flex justify-content-center">
-                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-youtube"></i></a>
-                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="team-item rounded">
-                    <img class="img-fluid" src="<?= base_url(); ?>/assets/img/madinah.png" alt="" />
-                    <div class="text-center p-4">
-                        <h5>Full Name</h5>
-                        <span>Designation</span>
-                    </div>
-                    <div class="team-text text-center bg-white p-4">
-                        <h5>Full Name</h5>
-                        <p>Designation</p>
-                        <div class="d-flex justify-content-center">
-                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-youtube"></i></a>
-                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                        <h5  class="fw-bold">AROFAH UTARA</h5>
+                        <div class="list-group">
+                            <p class="badge bg-info text-dark" class="fw-bold">Informasi Bed</p>
+                            <p>Terisi 3 Bed</p>
+                            <p>Tersisa 3 Bed</p>
+                            <p class="badge bg-info text-dark" class="fw-bold">Harga</p>
+                            <p>Rp. 1110.000 / Hari</p>
                         </div>
                     </div>
                 </div>
@@ -165,17 +127,17 @@
                 <div class="team-item rounded">
                     <img class="img-fluid" src="<?= base_url(); ?>/assets/img/arofah.png" alt="" />
                     <div class="text-center p-4">
-                        <h5>Full Name</h5>
-                        <span>Designation</span>
+                        <h5>Arofah Selatan</h5>
+                        <span>Berisi 7 Bed</span>
                     </div>
                     <div class="team-text text-center bg-white p-4">
-                        <h5>Full Name</h5>
-                        <p>Designation</p>
-                        <div class="d-flex justify-content-center">
-                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-youtube"></i></a>
-                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                        <h5  class="fw-bold">AROFAH SELATAN</h5>
+                        <div class="list-group">
+                            <p class="badge bg-info text-dark" class="fw-bold">Informasi Bed</p>
+                            <p>Terisi 1 Bed</p>
+                            <p>Tersisa 6 Bed</p>
+                            <p class="badge bg-info text-dark" class="fw-bold">Harga</p>
+                            <p>Rp. 1110.000 / Hari</p>
                         </div>
                     </div>
                 </div>
@@ -184,17 +146,55 @@
                 <div class="team-item rounded">
                     <img class="img-fluid" src="<?= base_url(); ?>/assets/img/hcu.png" alt="" />
                     <div class="text-center p-4">
-                        <h5>Full Name</h5>
-                        <span>Designation</span>
+                        <h5>Mekkah 1</h5>
+                        <span>Berisi 3 Bed</span>
                     </div>
                     <div class="team-text text-center bg-white p-4">
-                        <h5>Full Name</h5>
-                        <p>Designation</p>
-                        <div class="d-flex justify-content-center">
-                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-youtube"></i></a>
-                            <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                        <h5  class="fw-bold">MEKKAH 1</h5>
+                        <div class="list-group">
+                            <p class="badge bg-info text-dark" class="fw-bold">Informasi Bed</p>
+                            <p>Terisi 0 Bed</p>
+                            <p>Tersisa 3 Bed</p>
+                            <p class="badge bg-info text-dark" class="fw-bold">Harga</p>
+                            <p>Rp. 205.000 / Hari</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="team-item rounded">
+                    <img class="img-fluid" src="<?= base_url(); ?>/assets/img/hcu.png" alt="" />
+                    <div class="text-center p-4">
+                        <h5>Mekkah 2</h5>
+                        <span>Berisi 2 Bed</span>
+                    </div>
+                    <div class="team-text text-center bg-white p-4">
+                        <h5  class="fw-bold">MEKKAH 2</h5>
+                        <div class="list-group">
+                            <p class="badge bg-info text-dark" class="fw-bold">Informasi Bed</p>
+                            <p>Terisi 1 Bed</p>
+                            <p>Tersisa 1 Bed</p>
+                            <p class="badge bg-info text-dark" class="fw-bold">Harga</p>
+                            <p>Rp. 205.000 / Hari</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="team-item rounded">
+                    <img class="img-fluid" src="<?= base_url(); ?>/assets/img/hcu.png" alt="" />
+                    <div class="text-center p-4">
+                        <h5>Mekkah 3</h5>
+                        <span>Berisi 2 Bed</span>
+                    </div>
+                    <div class="team-text text-center bg-white p-4">
+                        <h5  class="fw-bold">MEKKAH 3</h5>
+                        <div class="list-group">
+                            <p class="badge bg-info text-dark" class="fw-bold">Informasi Bed</p>
+                            <p>Terisi 0 Bed</p>
+                            <p>Tersisa 2 Bed</p>
+                            <p class="badge bg-info text-dark" class="fw-bold">Harga</p>
+                            <p>Rp. 205.000 / Hari</p>
                         </div>
                     </div>
                 </div>
