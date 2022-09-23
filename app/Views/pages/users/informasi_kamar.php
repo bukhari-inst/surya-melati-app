@@ -59,9 +59,7 @@
                         <div class="list-group">
                             <p class="badge bg-info text-dark" class="fw-bold">Informasi Bed</p>
                             <p>Terisi 2 Bed</p>
-                            <p>Tersisa 0 Bed</p>
-                            <p class="badge bg-info text-dark" class="fw-bold">Harga</p>
-                            <p>Rp. 400.000 / Hari</p>
+                            <p>Kosong 0 Bed</p>
                         </div>
                     </div>
                 </div>
@@ -78,9 +76,7 @@
                         <div class="list-group">
                             <p class="badge bg-info text-dark" class="fw-bold">Informasi Bed</p>
                             <p>Terisi 1 Bed</p>
-                            <p>Tersisa 0 Bed</p>
-                            <p class="badge bg-info text-dark" class="fw-bold">Harga</p>
-                            <p>Rp. 450.000 / Hari</p>
+                            <p>Kosong 0 Bed</p>
                         </div>
                     </div>
                 </div>
@@ -97,9 +93,7 @@
                         <div class="list-group">
                             <p class="badge bg-info text-dark" class="fw-bold">Informasi Bed</p>
                             <p>Terisi 1 Bed</p>
-                            <p>Tersisa 3 Bed</p>
-                            <p class="badge bg-info text-dark" class="fw-bold">Harga</p>
-                            <p>Rp. 300.000 / Hari</p>
+                            <p>Kosong 3 Bed</p>
                         </div>
                     </div>
                 </div>
@@ -116,9 +110,7 @@
                         <div class="list-group">
                             <p class="badge bg-info text-dark" class="fw-bold">Informasi Bed</p>
                             <p>Terisi 3 Bed</p>
-                            <p>Tersisa 3 Bed</p>
-                            <p class="badge bg-info text-dark" class="fw-bold">Harga</p>
-                            <p>Rp. 1110.000 / Hari</p>
+                            <p>Kosong 3 Bed</p>
                         </div>
                     </div>
                 </div>
@@ -135,9 +127,7 @@
                         <div class="list-group">
                             <p class="badge bg-info text-dark" class="fw-bold">Informasi Bed</p>
                             <p>Terisi 1 Bed</p>
-                            <p>Tersisa 6 Bed</p>
-                            <p class="badge bg-info text-dark" class="fw-bold">Harga</p>
-                            <p>Rp. 1110.000 / Hari</p>
+                            <p>Kosong 6 Bed</p>
                         </div>
                     </div>
                 </div>
@@ -154,9 +144,7 @@
                         <div class="list-group">
                             <p class="badge bg-info text-dark" class="fw-bold">Informasi Bed</p>
                             <p>Terisi 0 Bed</p>
-                            <p>Tersisa 3 Bed</p>
-                            <p class="badge bg-info text-dark" class="fw-bold">Harga</p>
-                            <p>Rp. 205.000 / Hari</p>
+                            <p>Kosong 3 Bed</p>
                         </div>
                     </div>
                 </div>
@@ -173,9 +161,7 @@
                         <div class="list-group">
                             <p class="badge bg-info text-dark" class="fw-bold">Informasi Bed</p>
                             <p>Terisi 1 Bed</p>
-                            <p>Tersisa 1 Bed</p>
-                            <p class="badge bg-info text-dark" class="fw-bold">Harga</p>
-                            <p>Rp. 205.000 / Hari</p>
+                            <p>Kosong 1 Bed</p>
                         </div>
                     </div>
                 </div>
@@ -192,9 +178,7 @@
                         <div class="list-group">
                             <p class="badge bg-info text-dark" class="fw-bold">Informasi Bed</p>
                             <p>Terisi 0 Bed</p>
-                            <p>Tersisa 2 Bed</p>
-                            <p class="badge bg-info text-dark" class="fw-bold">Harga</p>
-                            <p>Rp. 205.000 / Hari</p>
+                            <p>Kosong 2 Bed</p>
                         </div>
                     </div>
                 </div>
