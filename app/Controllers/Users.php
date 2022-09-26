@@ -39,6 +39,23 @@ class Users extends BaseController
 
     public function loginProcess()
     {
+        if (!$this->validate([
+            'noRkmMedis' => [
+                'rules' => 'required|alpha_numeric_punct|min_length[3]|max_length[10]|is_unique[users.username,id,{id}]',
+                'errors' => [
+                    'required' => 'No Rekam Medis lengkap tidak boleh kosong',
+                ]
+            ],
+            'date' => [
+                'rules' => 'required|valid_date',
+                'errors' => [
+                    'required' => 'No Rekam Medis lengkap tidak boleh kosong',
+                ]
+            ],
+        ])) {
+            return redirect()->back()->withInput();
+        }
+
         $noRkmMedis = $this->request->getPost('noRkmMedis');
         $date = $this->request->getVar('date');
         $user = $this->ModelPasien->getPasienWhereNoRkmMedis($noRkmMedis);
