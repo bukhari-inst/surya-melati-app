@@ -37,11 +37,20 @@ class Users extends BaseController
         return view('pages/auth/login');
     }
 
+    public function routePrivateAccess()
+    {
+        if (session('user_id')) {
+            return redirect()->to(site_url('/'));
+        }
+
+        return view('pages/auth/loginPrivateAccess');
+    }
+
     public function loginProcess()
     {
         if (!$this->validate([
             'noRkmMedis' => [
-                'rules' => 'required|alpha_numeric_punct|min_length[3]|max_length[10]|is_unique[users.username,id,{id}]',
+                'rules' => 'required|alpha_numeric_punct|min_length[3]|max_length[10]',
                 'errors' => [
                     'required' => 'No Rekam Medis lengkap tidak boleh kosong',
                 ]
@@ -75,6 +84,39 @@ class Users extends BaseController
             return redirect()->back()->with('error', 'Nomor rekam medik tidak ditemukan');
         }
     }
+
+    public function loginPrivateAccessProcess()
+    {
+        if (!$this->validate([
+            'noRkmMedis' => [
+                'rules' => 'required|alpha_numeric_punct|min_length[3]|max_length[10]',
+                'errors' => [
+                    'required' => 'No Rekam Medis tidak boleh kosong',
+                ]
+            ],
+        ])) {
+            return redirect()->back()->withInput();
+        }
+
+        $noRkmMedis = $this->request->getPost('noRkmMedis');
+        $user = $this->ModelPasien->getPasienWhereNoRkmMedis($noRkmMedis);
+
+        if ($user) {
+            if ($noRkmMedis == $user->no_rkm_medis) {
+                $params = [
+                    'user_id' => $user->no_rkm_medis,
+                    'username' => $user->nm_pasien,
+                ];
+                session()->set($params);
+                return redirect()->to(site_url('/'));
+            } else {
+                return redirect()->back()->with('error', 'Nomor rekam medik tidak ditemukan');
+            }
+        } else {
+            return redirect()->back()->with('error', 'Nomor rekam medik tidak ditemukan');
+        }
+    }
+
 
     public function logout()
     {
