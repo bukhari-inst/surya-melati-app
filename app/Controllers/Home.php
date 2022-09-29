@@ -7,6 +7,8 @@ use App\Models\ModelCaraBayar;
 
 class Home extends BaseController
 {
+    protected $ModelPasien, $ModelCaraBayar;
+
     public function __construct()
     {
         $this->ModelPasien = new ModelPasien();
@@ -25,5 +27,10 @@ class Home extends BaseController
         ];
 
         return view('pages/users/pendaftaran', $data);
+    }
+
+    public function landingPage()
+    {
+        return view('pages/landing_page');
     }
 }
