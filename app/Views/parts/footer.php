@@ -27,21 +27,16 @@
                 <p><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
                 <p><i class="fa fa-envelope me-3"></i>info@example.com</p>
             </div>
-            <div class="col-lg-4 col-md-6">
-                <h5 class="text-light mb-4">Quick Links</h5>
-                <a class="btn btn-link" href="">About Us</a>
-                <a class="btn btn-link" href="">Contact Us</a>
-                <a class="btn btn-link" href="">Our Services</a>
-                <a class="btn btn-link" href="">Terms & Condition</a>
-                <a class="btn btn-link" href="">Support</a>
-            </div>
         </div>
     </div>
     <div class="container-fluid copyright">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a href="https://www.rsumsuryamelati.com" target="blank">rsumsuryamelati.com</a>, All Right
+                <div class="col-md-8 text-center text-md-start mb-3 mb-md-0">
+                    Copyright &copy; <?= date('Y') ?> <a href="https://www.rsumsuryamelati.com"
+                        target="blank">rsumsuryamelati.com</a>, Dev: <a href="https://www.instagram.com/kubika_inst/"
+                        target="blank">Bukhari_Inst</a>,
+                    All Right
                     Reserved.
                 </div>
                 <div class="col-md-6 text-center text-md-end">
