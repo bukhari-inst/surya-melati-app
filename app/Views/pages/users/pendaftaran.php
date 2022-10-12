@@ -69,7 +69,7 @@
                 </p>
                 <div class="bg-light rounded p-3">
                     <div class="d-flex align-items-center bg-white rounded p-3">
-                        <img class="flex-shrink-0 rounded-circle me-3" src="<?= base_url(); ?>/assets/img/profile-s.png" alt="" style="height: 40px;"/>
+                        <img class="flex-shrink-0 rounded-circle me-3" src="<?= base_url(); ?>/assets/img/profile-s.jpg" alt="" style="height: 40px;" />
                         <h5 class="mb-0">Call Us: +62 812 598 875 11</h5>
                     </div>
                 </div>

@@ -19,14 +19,14 @@
         <div class="row">
             <div class="col-12">
                 <?php if (session()->getFlashdata('success')) : ?>
-                <div class="text-center alert alert-success" role="alert">
-                    <?= session()->getFlashdata('success') ?>
-                </div>
+                    <div class="text-center alert alert-success" role="alert">
+                        <?= session()->getFlashdata('success') ?>
+                    </div>
                 <?php endif; ?>
                 <?php if (session()->getFlashdata('error')) : ?>
-                <div class="text-center alert alert-danger" role="alert">
-                    <?= session()->getFlashdata('error') ?>
-                </div>
+                    <div class="text-center alert alert-danger" role="alert">
+                        <?= session()->getFlashdata('error') ?>
+                    </div>
                 <?php endif; ?>
             </div>
         </div>
@@ -40,86 +40,85 @@
         <?php $tgl = strtotime($lastAntrian->tgl_registrasi); ?>
         <?php if ($tgl >= $today) : ?>
 
-        <div class="row g-5">
-            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.3s">
-                <h1 class="display-6 mb-5">
-                    Terima Kasih Atas kepercayaan Anda.
-                </h1>
-                <p class="mb-5">
-                    Bawalah kartu Berobat anda dan datang 30 menit sebelumnya. <br>
-                    Jika memilih cara bayar BPJS, bawalah surat rujukan atau surat kontrol asli dan tunjukkan pada
-                    petugas pendaftaran (Admisi).
-                </p>
-                <div class="bg-light rounded p-3">
-                    <div class="d-flex align-items-center bg-white rounded p-3">
-                        <img class="flex-shrink-0 rounded-circle me-3" src="<?= base_url(); ?>/assets/img/profile-s.png"
-                            alt="" style="height: 40px;" />
-                        <h5 class="mb-0">Call Us: +62 812 598 875 11</h5>
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.3s">
+                    <h1 class="display-6 mb-5">
+                        Terima Kasih Atas kepercayaan Anda.
+                    </h1>
+                    <p class="mb-5">
+                        Bawalah kartu Berobat anda dan datang 30 menit sebelumnya. <br>
+                        Jika memilih cara bayar BPJS, bawalah surat rujukan atau surat kontrol asli dan tunjukkan pada
+                        petugas pendaftaran (Admisi).
+                    </p>
+                    <div class="bg-light rounded p-3">
+                        <div class="d-flex align-items-center bg-white rounded p-3">
+                            <img class="flex-shrink-0 rounded-circle me-3" src="<?= base_url(); ?>/assets/img/profile-s.jpg" alt="" style="height: 40px;" />
+                            <h5 class="mb-0">Call Us: +62 812 598 875 11</h5>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" id="form">
-                <div class="service-item rounded h-100 p-5">
-                    <div class="d-flex align-items-center ms-n5 mb-4">
-                        <div class="service-icon flex-shrink-0 bg-primary rounded-end me-4">
-                            <span class="text-white fs-2"><?= $lastAntrian->no_reg ?></span>
-                            <!-- <img class="img-fluid" src="<?= base_url(); ?>/assets/img/icon/icon-10-light.png" alt="" /> -->
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" id="form">
+                    <div class="service-item rounded h-100 p-5">
+                        <div class="d-flex align-items-center ms-n5 mb-4">
+                            <div class="service-icon flex-shrink-0 bg-primary rounded-end me-4">
+                                <span class="text-white fs-2"><?= $lastAntrian->no_reg ?></span>
+                                <!-- <img class="img-fluid" src="<?= base_url(); ?>/assets/img/icon/icon-10-light.png" alt="" /> -->
+                            </div>
+                            <h4 class="mb-0">Nomor antrian anda</h4>
                         </div>
-                        <h4 class="mb-0">Nomor antrian anda</h4>
-                    </div>
-                    <ul class="list-group">
-                        <li class="list-group-item justify-content-between align-items-center text-center">
-                            <span class="fw-bold">Nama Lengkap:</span> <br> <?= $lastAntrian->nm_pasien ?>
-                        </li>
-                        <li class="list-group-item justify-content-between align-items-center text-center">
-                            <span class="fw-bold">Nomor Rekam Medik:</span> <br> <?= $lastAntrian->no_rkm_medis ?>
-                        </li>
-                        <li class="list-group-item justify-content-between align-items-center text-center">
-                            <span class="fw-bold">Tanggal Antrian Periksa:</span> <br>
-                            <?php $datePeriksa = (date_format(date_create($lastAntrian->tgl_registrasi), 'd-M-Y'));  ?>
-                            <?= $datePeriksa ?>
-                        </li>
-                        <li class="list-group-item justify-content-between align-items-center text-center">
-                            <span class="fw-bold">Nomor Antrian: </span> <br>
-                            <span class="badge bg-primary"><?= $lastAntrian->no_reg ?></span>
-                        </li>
-                        <li class="list-group-item justify-content-between align-items-center text-center">
-                            <span class="fw-bold">Poliklinik Tujuan:</span> <br> <?= $lastAntrian->nm_poli ?>
-                            <?= $lastAntrian->jam_mulai ?> - <?= $lastAntrian->jam_selesai ?>
-                        </li>
-                        <li class="list-group-item justify-content-between align-items-center text-center">
-                            <span class="fw-bold">Dokter Tujuan: </span> <br> <?= $lastAntrian->nm_dokter ?>
-                        </li>
-                        <li class="list-group-item justify-content-between align-items-center text-center">
-                            <span class="fw-bold">Cara Bayar: </span> <br> <?= $lastAntrian->png_jawab ?>
-                        </li>
-                    </ul>
-                    <div class="alert alert-warning mt-4 text-center" role="alert">
-                        Maksimal ganti tanggal antrian pukul 23.59, H-1 dari tanggal kunjungan!
-                    </div>
-                    <div class="col-12 mt-4">
-                        <div class="d-grid">
-                            <button class="btn btn-primary py-3" data-bs-toggle="modal" data-bs-target="#gantiAntrian">
-                                Ganti tanggal antrian? <i class="far fa-calendar-minus fa-lg"></i>
-                            </button>
+                        <ul class="list-group">
+                            <li class="list-group-item justify-content-between align-items-center text-center">
+                                <span class="fw-bold">Nama Lengkap:</span> <br> <?= $lastAntrian->nm_pasien ?>
+                            </li>
+                            <li class="list-group-item justify-content-between align-items-center text-center">
+                                <span class="fw-bold">Nomor Rekam Medik:</span> <br> <?= $lastAntrian->no_rkm_medis ?>
+                            </li>
+                            <li class="list-group-item justify-content-between align-items-center text-center">
+                                <span class="fw-bold">Tanggal Antrian Periksa:</span> <br>
+                                <?php $datePeriksa = (date_format(date_create($lastAntrian->tgl_registrasi), 'd-M-Y'));  ?>
+                                <?= $datePeriksa ?>
+                            </li>
+                            <li class="list-group-item justify-content-between align-items-center text-center">
+                                <span class="fw-bold">Nomor Antrian: </span> <br>
+                                <span class="badge bg-primary"><?= $lastAntrian->no_reg ?></span>
+                            </li>
+                            <li class="list-group-item justify-content-between align-items-center text-center">
+                                <span class="fw-bold">Poliklinik Tujuan:</span> <br> <?= $lastAntrian->nm_poli ?>
+                                <?= $lastAntrian->jam_mulai ?> - <?= $lastAntrian->jam_selesai ?>
+                            </li>
+                            <li class="list-group-item justify-content-between align-items-center text-center">
+                                <span class="fw-bold">Dokter Tujuan: </span> <br> <?= $lastAntrian->nm_dokter ?>
+                            </li>
+                            <li class="list-group-item justify-content-between align-items-center text-center">
+                                <span class="fw-bold">Cara Bayar: </span> <br> <?= $lastAntrian->png_jawab ?>
+                            </li>
+                        </ul>
+                        <div class="alert alert-warning mt-4 text-center" role="alert">
+                            Maksimal ganti tanggal antrian pukul 23.59, H-1 dari tanggal kunjungan!
+                        </div>
+                        <div class="col-12 mt-4">
+                            <div class="d-grid">
+                                <button class="btn btn-primary py-3" data-bs-toggle="modal" data-bs-target="#gantiAntrian">
+                                    Ganti tanggal antrian? <i class="far fa-calendar-minus fa-lg"></i>
+                                </button>
 
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-12 mt-4">
-                        <div class="d-grid">
-                            <button class="btn btn-danger py-3" data-bs-toggle="modal" data-bs-target="#batalAntrian">
-                                Batalkan antrian? <i class="far fa-calendar-times fa-lg"></i>
-                            </button>
+                        <div class="col-12 mt-4">
+                            <div class="d-grid">
+                                <button class="btn btn-danger py-3" data-bs-toggle="modal" data-bs-target="#batalAntrian">
+                                    Batalkan antrian? <i class="far fa-calendar-times fa-lg"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
         <?php else : ?>
-        <div class="alert alert-danger text-center" role="alert">
-            Tidak ada antrian untuk anda!
-        </div>
+            <div class="alert alert-danger text-center" role="alert">
+                Tidak ada antrian untuk anda!
+            </div>
         <?php endif; ?>
     </div>
 </div>
@@ -135,21 +134,20 @@
             </div>
             <div class="modal-body">
                 <?php if (time() < strtotime('12:01 am ' . date($lastAntrian->tgl_registrasi))) : ?>
-                Yakin ingin mengganti tanggal antrian anda? <br>
-                Nomor antrian anda saat ini akan otomatis dibatalkan.
+                    Yakin ingin mengganti tanggal antrian anda? <br>
+                    Nomor antrian anda saat ini akan otomatis dibatalkan.
                 <?php else : ?>
-                Tidak bisa ganti tanggal antrian! anda sudah melebihi batas waktu. Atau batalkan antrian anda sekarang,
-                dan
-                daftar antrian kembali selain tanggal besok.
+                    Tidak bisa ganti tanggal antrian! anda sudah melebihi batas waktu. Atau batalkan antrian anda sekarang,
+                    dan
+                    daftar antrian kembali selain tanggal besok.
                 <?php endif; ?>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn bg-danger text-white hover-overlay"
-                    data-bs-dismiss="modal">Tidak</button>
+                <button type="button" class="btn bg-danger text-white hover-overlay" data-bs-dismiss="modal">Tidak</button>
                 <?php if (time() < strtotime('12:01 am ' . date($lastAntrian->tgl_registrasi))) : ?>
-                <a class="btn btn-primary" type="button" href="<?= base_url('/gantiTanggalAntrian'); ?>">Ya</a>
+                    <a class="btn btn-primary" type="button" href="<?= base_url('/gantiTanggalAntrian'); ?>">Ya</a>
                 <?php else : ?>
-                <button class="btn bg-dark" disabled>Ya</button>
+                    <button class="btn bg-dark" disabled>Ya</button>
                 <?php endif; ?>
             </div>
         </div>
@@ -168,8 +166,7 @@
                 Yakin ingin membatalkan antrian anda?
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn bg-danger text-white hover-overlay"
-                    data-bs-dismiss="modal">Tidak</button>
+                <button type="button" class="btn bg-danger text-white hover-overlay" data-bs-dismiss="modal">Tidak</button>
                 <a class="btn btn-primary" type="button" href="<?= base_url('/batalTanggalAntrian'); ?>">Ya</a>
             </div>
         </div>
