@@ -76,7 +76,8 @@ class Users extends BaseController
                     'username' => $user->nm_pasien,
                 ];
                 session()->set($params);
-                return redirect()->to(site_url('/'));
+                // dd('test');
+                return redirect()->to(base_url('/'));
             } else {
                 return redirect()->back()->with('error', 'Tanggal lahir tidak sesuai');
             }
@@ -120,7 +121,8 @@ class Users extends BaseController
 
     public function logout()
     {
-        session()->remove('user_id', 'username');
+        session()->remove('user_id');
+        session()->remove('username');
         return redirect()->to(site_url('/login'));
     }
 

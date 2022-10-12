@@ -48,13 +48,13 @@
                 <p class="mb-5">
                     Bawalah kartu Berobat anda dan datang 30 menit sebelumnya. <br>
                     Jika memilih cara bayar BPJS, bawalah surat rujukan atau surat kontrol asli dan tunjukkan pada
-                    petugas di Lobby resepsionis.
+                    petugas pendaftaran (Admisi).
                 </p>
                 <div class="bg-light rounded p-3">
                     <div class="d-flex align-items-center bg-white rounded p-3">
-                        <img class="flex-shrink-0 rounded-circle me-3" src="<?= base_url(); ?>/assets/img/profile.jpg"
-                            alt="" />
-                        <h5 class="mb-0">Call Us: +012 345 6789</h5>
+                        <img class="flex-shrink-0 rounded-circle me-3" src="<?= base_url(); ?>/assets/img/profile-s.png"
+                            alt="" style="height: 40px;" />
+                        <h5 class="mb-0">Call Us: +62 812 598 875 11</h5>
                     </div>
                 </div>
             </div>

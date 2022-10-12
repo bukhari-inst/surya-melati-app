@@ -23,8 +23,6 @@
                     <a href="<?= base_url('/antrianSekarang'); ?>" class="dropdown-item">Antrian Sekarang</a>
                 </div>
             </div>
-            <a href="<?= base_url('/informasiKamar'); ?>"
-                class="nav-item nav-link <?= uri_string() == 'informasiKamar' ? 'active' : '' ?>">Informasi Kamar</a>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" style="display: inline;">
                     <img src="<?= base_url(); ?>/assets/img/default.svg" alt="Image_profile" class="image--cover"

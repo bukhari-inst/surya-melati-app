@@ -12,20 +12,37 @@
                     membantu Anda mendapatkan layanan berkualitas dan tetap sehat.
                 </p>
                 <div class="d-flex pt-2">
-                    <a class="btn btn-square me-1" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-square me-1" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-square me-1" href=""><i class="fab fa-youtube"></i></a>
-                    <a class="btn btn-square me-0" href=""><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-square me-1" href="https://www.instagram.com/rsum.surya.melati/" target="blank"><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-square me-1" href="https://www.tiktok.com/@rsumsuryamelati" target="blank"><img src="<?= base_url(); ?>/assets/img/icon/tiktok.svg" style="height: 16px"></a>
+                    <a class="btn btn-square me-1" href="https://www.facebook.com/rsum.surya.melati" target="blank"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-square me-0" href="https://www.youtube.com/channel/UC6mKOmvylyveO12NtsRTNoA/featured" target="blank"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
                 <h5 class="text-light mb-4">Alamat</h5>
-                <p>
-                    <i class="fa fa-map-marker-alt me-3"></i>Jl. Ngadiluwih - Wates Km. 10, Desa Ngletih, Kandat 64173,
-                    Kediri, Jawa Timur
-                </p>
-                <p><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                <p><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                <div class="d-flex flex-row align-top">
+                    <i class="fa fa-map-marker-alt me-3 pt-1"></i>
+                    <p>Jl. Ngadiluwih - Wates Km. 10, Desa Ngletih, Kandat 64173,
+                    Kediri, Jawa Timur</p>
+                </div>
+                <div class="d-flex flex-row">
+                    <i class="fa fa-phone-alt me-3 pt-2"></i>
+                    <p>
+                        Cust. Service 24 Jam <br>
+                        Telp: 0354 441 748 <br>
+                    </p>
+                </div>
+                <div class="d-flex flex-row">
+                    <i class="fa fa-phone-alt me-3 pt-2"></i>
+                    <p>
+                        Darurat 24 Jam <br>
+                        Telp: 0354 442 727
+                    </p>
+                </div>
+                <div class="d-flex flex-row">
+                    <i class="fa fa-envelope me-3 pt-1"></i>
+                    <p>surya.melati@yahoo.co.id</p>
+                </div>
             </div>
         </div>
     </div>
