@@ -37,16 +37,33 @@
                         Telp: 0354 441 748 <br>
                     </p>
                 </div>
-                <div class="d-flex flex-row">
-                    <i class="fa fa-phone-alt me-3 pt-2"></i>
-                    <p>
-                        Darurat 24 Jam <br>
-                        Telp: 0354 442 727
-                    </p>
+                <div class="d-lg-none">
+                    <div class="d-flex flex-row">
+                        <i class="fa fa-phone-alt me-3 pt-2"></i>
+                        <p>
+                            Darurat 24 Jam <br>
+                            Telp: 0354 442 727
+                        </p>
+                    </div>
+                    <div class="d-flex flex-row">
+                        <i class="fa fa-envelope me-3 pt-1"></i>
+                        <p>surya.melati@yahoo.co.id</p>
+                    </div>
                 </div>
-                <div class="d-flex flex-row">
-                    <i class="fa fa-envelope me-3 pt-1"></i>
-                    <p>surya.melati@yahoo.co.id</p>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="d-none d-lg-block">
+                    <div class="d-flex flex-row mt-5">
+                        <i class="fa fa-phone-alt me-3 pt-2"></i>
+                        <p>
+                            Darurat 24 Jam <br>
+                            Telp: 0354 442 727
+                        </p>
+                    </div>
+                    <div class="d-flex flex-row">
+                        <i class="fa fa-envelope me-3 pt-1"></i>
+                        <p>surya.melati@yahoo.co.id</p>
+                    </div>
                 </div>
             </div>
         </div>
