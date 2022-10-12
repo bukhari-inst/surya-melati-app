@@ -17,10 +17,14 @@
         </div>
         <div class="col-lg-5 px-5 text-end">
             <div class="h-100 d-inline-flex align-items-center">
-                <a class="text-white-50 ms-4" href=""><i class="fab fa-facebook-f"></i></a>
-                <a class="text-white-50 ms-4" href=""><i class="fab fa-twitter"></i></a>
-                <a class="text-white-50 ms-4" href=""><i class="fab fa-linkedin-in"></i></a>
-                <a class="text-white-50 ms-4" href=""><i class="fab fa-instagram"></i></a>
+                <a class="text-white-50 ms-4" href="https://www.instagram.com/rsum.surya.melati/" target="blank"><i
+                        class="fab fa-instagram"></i></a>
+                <a class="text-white-50 ms-4 mb-1" href="https://www.tiktok.com/@rsumsuryamelati" target="blank"><img
+                        src="<?= base_url(); ?>/assets/img/icon/tiktok.svg" style="height: 15px"></i></a>
+                <a class="text-white-50 ms-4" href="https://www.facebook.com/rsum.surya.melati" target="blank"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a class="text-white-50 ms-4" href="https://www.youtube.com/channel/UC6mKOmvylyveO12NtsRTNoA/featured"
+                    target="blank"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
     </div>
