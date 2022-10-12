@@ -4,15 +4,15 @@
         <div class="col-lg-7 px-5 text-start">
             <div class="h-100 d-inline-flex align-items-center me-4">
                 <small class="fa fa-phone-alt me-2"></small>
-                <small>+012 345 6789</small>
+                <small>0354 441 748</small>
             </div>
             <div class="h-100 d-inline-flex align-items-center me-4">
                 <small class="far fa-envelope-open me-2"></small>
-                <small>info@example.com</small>
+                <small>surya.melati@yahoo.co.id</small>
             </div>
             <div class="h-100 d-inline-flex align-items-center me-4">
                 <small class="far fa-clock me-2"></small>
-                <small>Mon - Fri : 09 AM - 09 PM</small>
+                <small>Layanan 24/7</small>
             </div>
         </div>
         <div class="col-lg-5 px-5 text-end">
