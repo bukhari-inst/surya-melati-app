@@ -50,9 +50,11 @@ class Users extends BaseController
     {
         if (!$this->validate([
             'noRkmMedis' => [
-                'rules' => 'required|alpha_numeric_punct|min_length[3]|max_length[10]',
+                'rules' => 'required|alpha_numeric_punct|min_length[6]|max_length[6]',
                 'errors' => [
                     'required' => 'No Rekam Medis lengkap tidak boleh kosong',
+                    'min_length' => 'Nomor rekam medis tidak boleh kurang dari 6 digit',
+                    'max_length' => 'Nomor rekam medis tidak boleh lebih dari 6 digit',
                 ]
             ],
             'date' => [
@@ -93,6 +95,8 @@ class Users extends BaseController
                 'rules' => 'required|alpha_numeric_punct|min_length[3]|max_length[10]',
                 'errors' => [
                     'required' => 'No Rekam Medis tidak boleh kosong',
+                    'min_length' => 'Nomor rekam medis tidak boleh kurang dari 6 digit',
+                    'max_length' => 'Nomor rekam medis tidak boleh lebih dari 6 digit',
                 ]
             ],
         ])) {
@@ -428,9 +432,11 @@ class Users extends BaseController
         if ($nikKtp != $pasien->no_ktp) {
             if (!$this->validate([
                 'nikKtp' => [
-                    'rules' => 'required',
+                    'rules' => 'required|min_length[16]|max_length[16]',
                     'errors' => [
                         'required' => 'NIK KTP tidak boleh kosong',
+                        'min_length' => 'NIK KTP tidak boleh kurang dari 16 digit',
+                        'max_length' => 'NIK KTP tidak boleh lebih dari 16 digit',
                     ]
                 ],
             ])) {
