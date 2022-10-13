@@ -403,6 +403,7 @@ class Users extends BaseController
     {
         $namaPasien = $this->request->getVar('namaPasien');
         $nikKtp = $this->request->getVar('nikKtp');
+        $noPeserta = $this->request->getVar('noPeserta');
         $jenisKelamin = $this->request->getVar('jenisKelamin');
         $agama = $this->request->getVar('agama');
         $tempatLahir = $this->request->getVar('tempatLahir');
@@ -437,6 +438,21 @@ class Users extends BaseController
                         'required' => 'NIK KTP tidak boleh kosong',
                         'min_length' => 'NIK KTP tidak boleh kurang dari 16 digit',
                         'max_length' => 'NIK KTP tidak boleh lebih dari 16 digit',
+                    ]
+                ],
+            ])) {
+                return redirect()->back()->withInput();
+            }
+        }
+
+        if ($noPeserta != $pasien->no_peserta) {
+            if (!$this->validate([
+                'noPeserta' => [
+                    'rules' => 'required|min_length[13]|max_length[13]',
+                    'errors' => [
+                        'required' => 'No. Kartu BPJS tidak boleh kosong',
+                        'min_length' => 'No. Kartu BPJS tidak boleh kurang dari 13 digit',
+                        'max_length' => 'No. Kartu BPJS tidak boleh lebih dari 13 digit',
                     ]
                 ],
             ])) {
@@ -588,6 +604,7 @@ class Users extends BaseController
             'pekerjaan' => $pekerjaan,
             'stts_nikah' => $statusNikah,
             'no_tlp' => $nomorTelepon,
+            'no_peserta' => $noPeserta,
         ]);
 
         return redirect()->to('/perbaruiDataUser')->with('success', 'Data diri anda berhasil diperbarui.');

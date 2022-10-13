@@ -14,7 +14,7 @@ class ModelPasien extends Model
     protected $allowedFields = [
         'no_rkm_medis', 'nm_pasien', 'no_ktp', 'jk', 'agama',
         'tmp_lahir', 'tgl_lahir', 'nm_ibu', 'alamat',
-        'gol_darah', 'pekerjaan', 'stts_nikah', 'no_tlp'
+        'gol_darah', 'pekerjaan', 'stts_nikah', 'no_tlp', 'no_peserta'
     ];
 
     public function getPasienWhereNoRkmMedis($noRkmMedis = false)

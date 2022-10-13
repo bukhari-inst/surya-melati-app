@@ -24,6 +24,11 @@
                     <?= $validation->getError('nikKtp') ?>
                 </div>
                 <?php endif; ?>
+                <?php if ($validation->getError('noPeserta')) : ?>
+                <div class="text-center alert alert-danger" role="alert">
+                    <?= $validation->getError('noPeserta') ?>
+                </div>
+                <?php endif; ?>
                 <?php if ($validation->getError('jenisKelamin')) : ?>
                 <div class="text-center alert alert-danger" role="alert">
                     <?= $validation->getError('jenisKelamin') ?>
@@ -130,6 +135,13 @@
                                     <input type="text" class="form-control" id="gmail" placeholder="Gurdian"
                                         value="<?= $pasien->no_ktp ?>" name="nikKtp" />
                                     <label for="gmail">NIK KTP</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="gmail" placeholder="Gurdian"
+                                        value="<?= $pasien->no_peserta ?>" name="noPeserta" />
+                                    <label for="gmail">No. Kartu BPJS</label>
                                 </div>
                             </div>
                             <div class="col-sm-12">
