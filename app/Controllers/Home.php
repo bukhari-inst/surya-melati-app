@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\ModelPasien;
 use App\Models\ModelCaraBayar;
+use CodeIgniter\Exceptions\AlertError;
 
 class Home extends BaseController
 {
@@ -23,6 +24,8 @@ class Home extends BaseController
             'user_id' => session('user_id'),
             'payment' => $payment,
         ];
+
+        // echo "<script> alert('There are no fields to generate a report'); </script>";
 
         return view('pages/users/pendaftaran', $data);
     }
