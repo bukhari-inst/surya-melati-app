@@ -55,7 +55,8 @@
                                 <?php foreach ($historyAntrian as $history) : ?>
                                 <tr>
                                     <th scope="row"><?= $i++; ?></th>
-                                    <td><?= $history->tgl_registrasi ?></td>
+                                    <?php $datePeriksa = (date_format(date_create($history->tgl_registrasi), 'd-m-Y'));  ?>
+                                    <td><?= $datePeriksa ?></td>
                                     <td><?= $history->no_reg ?></td>
                                     <td><?= $history->nm_poli ?></td>
                                     <td><?= $history->nm_dokter ?></td>
